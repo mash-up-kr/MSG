@@ -133,7 +133,7 @@ export const resetCss = css`
 
   body {
     color: #ffffff;
-    font-family: SpoqaHanSansNeo, sans-serif;
+    font-family: 'Pretendard Variable', sans-serif;
     line-height: 1;
     background-color: #18191c;
     -webkit-font-smoothing: antialiased;
