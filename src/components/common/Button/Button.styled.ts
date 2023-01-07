@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export const SmallButton = styled.button<ButtonProps>`
   ${({ theme, isSelected }) => css`
-    padding: 0.8rem 1.6rem 0.9rem;
+    padding: ${isSelected ? '0.8rem 1.7rem 0.9rem' : '0.8rem 1.6rem 0.9rem'};
     color: ${isSelected ? theme.color.white : theme.color.gray500};
     font-weight: 700;
     font-size: 1.4rem;
@@ -31,7 +31,7 @@ export const LargeButton = styled.button<ButtonProps>`
 
 export const XLargeButton = styled.button<ButtonProps>`
   ${({ theme, isSelected }) => css`
-    padding: 2rem 2.4rem;
+    padding: ${isSelected ? '2rem 2.6rem' : '2rem 2.4rem'};
     color: ${theme.color.white};
     font-weight: 700;
     font-size: 2rem;
