@@ -50,12 +50,19 @@ export const MacBook = styled(MacBookSvg)`
 
 export const PreviewBackground = styled.div<{ backgroundColor: PreviewBackgroundColor }>`
   ${({ theme, backgroundColor }) => css`
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
     background: ${theme.color[backgroundColor]};
     border-radius: 10.85rem 10.85rem 0px 0px;
   `}
+`;
+
+export const BackgroundWindowWrapper = styled.div`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
 `;
 
 export const SnackWrapper = styled.span`
