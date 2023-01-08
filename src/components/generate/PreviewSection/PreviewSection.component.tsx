@@ -1,10 +1,21 @@
+import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
+import BeerSvg from '@/assets/svg/beer-bottom.svg';
+import WineSvg from '@/assets/svg/wine-bottom.svg';
+import EnergySvg from '@/assets/svg/energy-bottom.svg';
 import * as Styled from './PreviewSection.styled';
 
+const snacks = { coffee: CoffeeSvg, beer: BeerSvg, wine: WineSvg, energy: EnergySvg };
+
+export type PreviewBackgroundColor = 'night' | 'sunset' | 'morning' | 'snow' | 'black50';
+export type PreviewSnack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
 interface PreviewSectionProps {
-  backgroundColor: Styled.PreviewBackgroundColor;
+  backgroundColor: PreviewBackgroundColor;
+  snack: PreviewSnack;
+  isVisibleTalkMySelf: boolean;
 }
 
-const PreviewSection = ({ backgroundColor }: PreviewSectionProps) => {
+const PreviewSection = ({ backgroundColor, snack, isVisibleTalkMySelf }: PreviewSectionProps) => {
+  const SnackImage = snack ? snacks[snack] : null;
   return (
     <Styled.PreviewSection>
       <Styled.MarginBox />
@@ -14,6 +25,13 @@ const PreviewSection = ({ backgroundColor }: PreviewSectionProps) => {
         <Styled.PreviewBackground backgroundColor={backgroundColor} />
         <Styled.Mashong />
         <Styled.MacBook />
+        <Styled.SnackWrapper>{snack && <SnackImage />}</Styled.SnackWrapper>
+        {isVisibleTalkMySelf && (
+          <Styled.Bubble>
+            <Styled.TalkMySelfInput placeholder="혼잣말 입력해죠" />
+            <Styled.BubbleTail />
+          </Styled.Bubble>
+        )}
       </Styled.Preview>
     </Styled.PreviewSection>
   );

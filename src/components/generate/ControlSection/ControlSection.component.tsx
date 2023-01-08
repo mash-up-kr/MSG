@@ -1,45 +1,62 @@
 import { Button } from '@/components/common';
-
 import { Dispatch, SetStateAction, useState } from 'react';
-import { backgroundOptions, controlCategories, ControlCategory } from '@/constants/mashong';
 import * as Styled from './ControlSection.styled';
-import { PreviewBackgroundColor } from '../PreviewSection/PreviewSection.styled';
+import type {
+  PreviewBackgroundColor,
+  PreviewSnack,
+} from '../PreviewSection/PreviewSection.component';
+import CategoryOption, {
+  ControlCategory,
+  CONTROL_CATEGORIES,
+} from '../CategoryOption/CategoryOption.component';
 
+const categories: ControlCategory[] = ['background', 'snack', 'talkMySelf'];
 interface ControlSectionProps {
+  currentBackground: PreviewBackgroundColor;
+  currentSnack: PreviewSnack;
+  isVisibleTalkMySelf: boolean;
   setCurrentBackground: Dispatch<SetStateAction<PreviewBackgroundColor>>;
+  setCurrentSnack: Dispatch<SetStateAction<PreviewSnack>>;
+  setIsVisibleTalkMySelf: Dispatch<SetStateAction<boolean>>;
 }
 
-const ControlSection = ({ setCurrentBackground }: ControlSectionProps) => {
-  const [currentCategory, setCurrentCategory] = useState<ControlCategory>('배경');
-
-  const handleSetCurrentBackground = (background: PreviewBackgroundColor) => {
-    setCurrentBackground(background);
-  };
+const ControlSection = ({
+  currentBackground,
+  currentSnack,
+  isVisibleTalkMySelf,
+  setCurrentBackground,
+  setCurrentSnack,
+  setIsVisibleTalkMySelf,
+}: ControlSectionProps) => {
+  const [currentCategory, setCurrentCategory] = useState<ControlCategory>('background');
 
   const handleChangeCategory = (SelectedCategory: ControlCategory) => {
     setCurrentCategory(SelectedCategory);
   };
+
   return (
     <Styled.ControlSection>
       <Styled.Categories>
-        {controlCategories.map((category) => (
+        {categories.map((category) => (
           <Button
             size="s"
             isSelected={currentCategory === category}
             onClick={() => handleChangeCategory(category)}
             key={category}
           >
-            {category}
+            {CONTROL_CATEGORIES[category]}
           </Button>
         ))}
       </Styled.Categories>
-      <Styled.OptionList>
-        {backgroundOptions.map(({ ImageComponent, option }) => (
-          <Styled.OptionItem key={option} onClick={() => handleSetCurrentBackground(option)}>
-            <ImageComponent />
-          </Styled.OptionItem>
-        ))}
-      </Styled.OptionList>
+      <CategoryOption
+        currentCategory={currentCategory}
+        currentBackground={currentBackground}
+        currentSnack={currentSnack}
+        isVisibleTalkMySelf={isVisibleTalkMySelf}
+        setCurrentBackground={setCurrentBackground}
+        setCurrentSnack={setCurrentSnack}
+        setIsVisibleTalkMySelf={setIsVisibleTalkMySelf}
+      />
     </Styled.ControlSection>
   );
 };

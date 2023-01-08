@@ -1,6 +1,9 @@
 import { NavigationBar } from '@/components/common';
 import { ControlSection, GenerateLayout, PreviewSection } from '@/components/generate';
-import { PreviewBackgroundColor } from '@/components/generate/PreviewSection/PreviewSection.styled';
+import type {
+  PreviewBackgroundColor,
+  PreviewSnack,
+} from '@/components/generate/PreviewSection/PreviewSection.component';
 import type { PlatformKey } from '@/constants/platform';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
@@ -16,6 +19,9 @@ interface GeneratePageProps {
 
 const GeneratePage: NextPage<GeneratePageProps> = () => {
   const [currentBackground, setCurrentBackground] = useState<PreviewBackgroundColor>('black50');
+  const [currentSnack, setCurrentSnack] = useState<PreviewSnack>(null);
+  const [isVisibleTalkMySelf, setIsVisibleTalkMySelf] = useState(false);
+
   return (
     <>
       <NavigationBar
@@ -24,8 +30,19 @@ const GeneratePage: NextPage<GeneratePageProps> = () => {
         rightButtonEvent={() => {}}
       />
       <GenerateLayout>
-        <PreviewSection backgroundColor={currentBackground} />
-        <ControlSection setCurrentBackground={setCurrentBackground} />
+        <PreviewSection
+          backgroundColor={currentBackground}
+          snack={currentSnack}
+          isVisibleTalkMySelf={isVisibleTalkMySelf}
+        />
+        <ControlSection
+          currentBackground={currentBackground}
+          currentSnack={currentSnack}
+          isVisibleTalkMySelf={isVisibleTalkMySelf}
+          setCurrentBackground={setCurrentBackground}
+          setCurrentSnack={setCurrentSnack}
+          setIsVisibleTalkMySelf={setIsVisibleTalkMySelf}
+        />
       </GenerateLayout>
     </>
   );
