@@ -20,6 +20,7 @@ interface GeneratePageProps {
 const GeneratePage: NextPage<GeneratePageProps> = () => {
   const [currentBackground, setCurrentBackground] = useState<PreviewBackgroundColor>('black50');
   const [currentSnack, setCurrentSnack] = useState<PreviewSnack>(null);
+  const [talkMySelf, setTalkMySelf] = useState('');
   const [isVisibleTalkMySelf, setIsVisibleTalkMySelf] = useState(false);
 
   return (
@@ -33,6 +34,8 @@ const GeneratePage: NextPage<GeneratePageProps> = () => {
         <PreviewSection
           backgroundColor={currentBackground}
           snack={currentSnack}
+          talkMySelf={talkMySelf}
+          setTalkMySelf={setTalkMySelf}
           isVisibleTalkMySelf={isVisibleTalkMySelf}
         />
         <ControlSection

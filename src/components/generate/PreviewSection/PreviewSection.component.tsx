@@ -6,6 +6,7 @@ import Coffee from '@/assets/svg/coffee-bottom.svg';
 import Beer from '@/assets/svg/beer-bottom.svg';
 import Wine from '@/assets/svg/wine-bottom.svg';
 import Energy from '@/assets/svg/energy-bottom.svg';
+import { ChangeEventHandler, Dispatch, SetStateAction } from 'react';
 import * as Styled from './PreviewSection.styled';
 
 const backgroundWindows = {
@@ -22,12 +23,26 @@ export type PreviewSnack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
 interface PreviewSectionProps {
   backgroundColor: PreviewBackgroundColor;
   snack: PreviewSnack;
+  talkMySelf: string;
   isVisibleTalkMySelf: boolean;
+  setTalkMySelf: Dispatch<SetStateAction<string>>;
 }
 
-const PreviewSection = ({ backgroundColor, snack, isVisibleTalkMySelf }: PreviewSectionProps) => {
+const PreviewSection = ({
+  backgroundColor,
+  snack,
+  talkMySelf,
+  isVisibleTalkMySelf,
+  setTalkMySelf,
+}: PreviewSectionProps) => {
   const SnackImage = snack ? snacks[snack] : null;
   const BackgroundWindowImage = backgroundWindows[backgroundColor];
+
+  const handleChangeTalkMySelf: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
+    const { value } = target;
+    if (value.length > 8) return;
+    setTalkMySelf(value);
+  };
 
   return (
     <Styled.PreviewSection>
@@ -46,7 +61,11 @@ const PreviewSection = ({ backgroundColor, snack, isVisibleTalkMySelf }: Preview
         <Styled.SnackWrapper>{snack && <SnackImage />}</Styled.SnackWrapper>
         {isVisibleTalkMySelf && (
           <Styled.Bubble>
-            <Styled.TalkMySelfInput placeholder="혼잣말 입력해죠" />
+            <Styled.TalkMySelfInput
+              value={talkMySelf}
+              placeholder="혼잣말 입력해죠"
+              onChange={handleChangeTalkMySelf}
+            />
             <Styled.BubbleTail />
           </Styled.Bubble>
         )}
