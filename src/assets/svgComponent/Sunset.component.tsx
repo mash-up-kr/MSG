@@ -22,8 +22,8 @@ const SunsetBg = () => {
           y2="48"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF617E" />
-          <stop offset="1" stop-color="#FFC28A" />
+          <stop stopColor="#FF617E" />
+          <stop offset="1" stopColor="#FFC28A" />
         </linearGradient>
       </defs>
     </svg>
