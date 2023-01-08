@@ -1,3 +1,4 @@
+import useDetectViewportHeight from '@/components/hooks/useDetectViewportHeight';
 import { ReactNode } from 'react';
 import * as Styled from './Layout.styled';
 
@@ -6,7 +7,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return <Styled.Layout>{children}</Styled.Layout>;
+  const { vh } = useDetectViewportHeight();
+  return <Styled.Layout vh={vh}>{children}</Styled.Layout>;
 };
 
 export default Layout;
