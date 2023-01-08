@@ -4,17 +4,19 @@ import type {
   PreviewBackgroundColor,
   PreviewSnack,
 } from '@/components/generate/PreviewSection/PreviewSection.component';
-import type { PlatformKey } from '@/constants/platform';
+import type { Platform } from '@/constants/platform';
+import { RESULT_ROUTES } from '@/constants/route';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 import type { ParsedUrlQuery } from 'querystring';
 import { useState } from 'react';
 
 interface Params extends ParsedUrlQuery {
-  platformName: PlatformKey;
+  platformName: Platform;
 }
 
 interface GeneratePageProps {
-  platformName: PlatformKey;
+  platformName: Platform;
 }
 
 const GeneratePage: NextPage<GeneratePageProps> = () => {
@@ -23,12 +25,30 @@ const GeneratePage: NextPage<GeneratePageProps> = () => {
   const [talkMySelf, setTalkMySelf] = useState('');
   const [isVisibleTalkMySelf, setIsVisibleTalkMySelf] = useState(false);
 
+  const selectedOptions = {
+    background: currentBackground,
+    snack: currentSnack ?? '',
+    isVisibleTalkMySelf: isVisibleTalkMySelf.toString(),
+    talkMySelf,
+  };
+
+  const router = useRouter();
+  const platform = router.query.platformName as Platform;
+  const selectedOptionParams = new URLSearchParams(selectedOptions).toString();
+  const handleGoToResultPage = () => {
+    router.push(`${RESULT_ROUTES[platform]}?${selectedOptionParams}`);
+  };
+
+  const handleBackToPrevPage = () => {
+    router.back();
+  };
+
   return (
     <>
       <NavigationBar
         rightButtonText="다음"
-        backButtonEvent={() => {}}
-        rightButtonEvent={() => {}}
+        backButtonEvent={handleBackToPrevPage}
+        rightButtonEvent={handleGoToResultPage}
       />
       <GenerateLayout>
         <PreviewSection
