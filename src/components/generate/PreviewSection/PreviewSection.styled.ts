@@ -89,7 +89,7 @@ export const Bubble = styled.div`
 export const BubbleTail = styled(BubbleSvg)`
   position: absolute;
   right: 3.3rem;
-  bottom: -0.9rem;
+  bottom: -0.8rem;
 `;
 
 export const TalkMySelfInput = styled.input`
