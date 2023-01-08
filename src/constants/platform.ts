@@ -1,13 +1,12 @@
-import { KeyOf, ValueOf } from '@/types/helper';
+import { KeyOf } from '@/types/helper';
 
-export const platforms = {
-  DESIGN: 'design',
-  WEB: 'web',
-  ANDROID: 'android',
-  iOS: 'ios',
-  NODE: 'node',
-  SPRING: 'spring',
+export const PLATFORMS = {
+  design: 'design',
+  web: 'web',
+  android: 'android',
+  ios: 'ios',
+  node: 'node',
+  spring: 'spring',
 } as const;
 
-export type PlatformUpperCase = KeyOf<typeof platforms>;
-export type PlatformLowerCase = ValueOf<typeof platforms>;
+export type Platform = KeyOf<typeof PLATFORMS>;
