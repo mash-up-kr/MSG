@@ -32,7 +32,7 @@ export const Preview = styled.div`
   position: relative;
   width: 22.6rem;
   height: 24rem;
-  margin: 0 auto;
+  margin: 8.867vh auto 0;
 `;
 
 export const Mashong = styled(MashongSvg)`
