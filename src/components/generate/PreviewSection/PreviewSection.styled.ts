@@ -23,7 +23,7 @@ export const Paragraph = styled.p`
 `;
 
 export const MarginBox = styled.div`
-  height: 7.39vh;
+  height: 4.5vh;
   min-height: 3rem;
   max-height: 6rem;
 `;

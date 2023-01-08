@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const ControlSection = styled.section`
-  margin-top: 7.39vh;
+  margin-top: 4.5vh;
 `;
 
 export const Categories = styled.div`
