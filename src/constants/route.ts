@@ -3,9 +3,15 @@ import { PLATFORMS } from './platform';
 
 export const ROUTES = {
   home: '/',
+  registration: '/registration',
   generate: '/generate',
   result: '/result',
 } as const;
+
+export const REGISTRATION_ROUTES = {
+  name: `${ROUTES.registration}/name`,
+  platform: `${ROUTES.registration}/platform`,
+};
 
 export const GENERATE_ROUTES = {
   ios: `${ROUTES.generate}/${PLATFORMS.ios}`,

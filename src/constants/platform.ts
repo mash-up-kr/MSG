@@ -10,3 +10,12 @@ export const PLATFORMS = {
 } as const;
 
 export type Platform = KeyOf<typeof PLATFORMS>;
+
+export const PLATFORM_NAME_MAP = {
+  design: 'Product Design',
+  web: 'Web',
+  android: 'Android',
+  ios: 'iOS',
+  node: 'Node',
+  spring: 'Spring',
+};
