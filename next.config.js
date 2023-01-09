@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compiler: {
+    emotion: {
+      autoLabel: 'dev-only',
+      labelFormat: '[local]',
+    },
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
