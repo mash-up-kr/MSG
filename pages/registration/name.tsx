@@ -8,18 +8,18 @@ import { ROUTES } from '@/constants/route';
 const NamePage: NextPage = () => {
   const router = useRouter();
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isRightButtonDisabled, setIsRightButtonDisabled] = useState(true);
 
-  const handleFormChange = (validity: boolean) => {
-    setIsDisabled(!validity);
+  const handleChangeNameForm = (validity: boolean) => {
+    setIsRightButtonDisabled(!validity);
   };
 
-  const handleRightButtonClick = () => {
+  const handleClickRightButton = () => {
     if (!formRef.current) return;
     formRef.current.requestSubmit();
   };
 
-  const handleBackButtonClick = () => {
+  const handleClickBackButton = () => {
     router.replace(ROUTES.home);
   };
 
@@ -28,13 +28,13 @@ const NamePage: NextPage = () => {
       <header>
         <NavigationBar
           rightButtonText="다음"
-          rightButtonEvent={handleRightButtonClick}
-          backButtonEvent={handleBackButtonClick}
-          isDisabled={isDisabled}
+          rightButtonEvent={handleClickRightButton}
+          backButtonEvent={handleClickBackButton}
+          isDisabled={isRightButtonDisabled}
         />
       </header>
       <RegistrationLayout>
-        <NameForm ref={formRef} onFormChange={handleFormChange} />
+        <NameForm ref={formRef} onChangeForm={handleChangeNameForm} />
       </RegistrationLayout>
     </>
   );

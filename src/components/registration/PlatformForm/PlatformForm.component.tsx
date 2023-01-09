@@ -11,13 +11,13 @@ const schema = z.object({
 });
 
 interface PlatformFormProps {
-  onFormChange: (validity: boolean) => void;
+  onChangeForm: (validity: boolean) => void;
 }
 
-const PlatformForm = forwardRef<HTMLFormElement, PlatformFormProps>(({ onFormChange }, ref) => {
+const PlatformForm = forwardRef<HTMLFormElement, PlatformFormProps>(({ onChangeForm }, ref) => {
   const router = useRouter();
 
-  const handleFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -35,11 +35,11 @@ const PlatformForm = forwardRef<HTMLFormElement, PlatformFormProps>(({ onFormCha
 
   return (
     <Styled.Form
-      onSubmit={handleFormSubmit}
+      onSubmit={handleSubmitForm}
       ref={ref}
       onChange={(event) => {
         const validity = event.currentTarget.checkValidity();
-        onFormChange(validity);
+        onChangeForm(validity);
       }}
     >
       <Styled.FormLabel id="platform-selection-label">

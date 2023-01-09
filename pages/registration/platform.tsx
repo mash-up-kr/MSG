@@ -8,18 +8,18 @@ import { REGISTRATION_ROUTES } from '@/constants/route';
 const PlatformPage: NextPage = () => {
   const router = useRouter();
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isRightButtonDisabled, setIsRightButtonDisabled] = useState(true);
 
-  const handleFormChange = (validity: boolean) => {
-    setIsDisabled(!validity);
+  const handleChangePlatformForm = (validity: boolean) => {
+    setIsRightButtonDisabled(!validity);
   };
 
-  const handleRightButtonClick = () => {
+  const handleClickRightButton = () => {
     if (!formRef.current) return;
     formRef.current.requestSubmit();
   };
 
-  const handleBackButtonClick = () => {
+  const handleClickBackButton = () => {
     const { name } = router.query;
     router.replace({ pathname: REGISTRATION_ROUTES.name, query: { name } });
   };
@@ -34,7 +34,7 @@ const PlatformPage: NextPage = () => {
   useEffect(() => {
     if (!formRef.current) return;
     const validity = formRef.current.checkValidity();
-    handleFormChange(validity);
+    handleChangePlatformForm(validity);
   }, []);
 
   return (
@@ -42,13 +42,13 @@ const PlatformPage: NextPage = () => {
       <header>
         <NavigationBar
           rightButtonText="다음"
-          rightButtonEvent={handleRightButtonClick}
-          backButtonEvent={handleBackButtonClick}
-          isDisabled={isDisabled}
+          rightButtonEvent={handleClickRightButton}
+          backButtonEvent={handleClickBackButton}
+          isDisabled={isRightButtonDisabled}
         />
       </header>
       <RegistrationLayout>
-        <PlatformForm ref={formRef} onFormChange={handleFormChange} />
+        <PlatformForm ref={formRef} onChangeForm={handleChangePlatformForm} />
       </RegistrationLayout>
     </>
   );

@@ -11,10 +11,10 @@ const schema = z.object({
 });
 
 interface NameFormProps {
-  onFormChange: (validity: boolean) => void;
+  onChangeForm: (validity: boolean) => void;
 }
 
-const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onFormChange }, ref) => {
+const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, ref) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -27,10 +27,10 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onFormChange }, r
 
     const result = schema.safeParse(data);
 
-    onFormChange(result.success);
-  }, [ref, onFormChange]);
+    onChangeForm(result.success);
+  }, [ref, onChangeForm]);
 
-  const handleFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  const handleSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -43,7 +43,7 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onFormChange }, r
     }
   };
 
-  const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
+  const handleChangeInput: ChangeEventHandler<HTMLInputElement> = (event) => {
     const [currentValueLength, maxValueLength] = [
       event.currentTarget.value.length,
       event.currentTarget.maxLength,
@@ -54,13 +54,13 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onFormChange }, r
     }
   };
 
-  const handleFormChange: FormEventHandler<HTMLFormElement> = (event) => {
+  const handleChangeForm: FormEventHandler<HTMLFormElement> = (event) => {
     const validity = event.currentTarget.checkValidity();
-    onFormChange(validity);
+    onChangeForm(validity);
   };
 
   return (
-    <Styled.Form onSubmit={handleFormSubmit} onChange={handleFormChange} ref={ref}>
+    <Styled.Form onSubmit={handleSubmitForm} onChange={handleChangeForm} ref={ref}>
       <Styled.Label htmlFor="name">이름(닉네임)을{'\n'}알려주세요</Styled.Label>
       <Styled.Input
         type="text"
@@ -72,7 +72,7 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onFormChange }, r
         minLength={2}
         maxLength={6}
         defaultValue={router.query.name}
-        onChange={handleInputChange}
+        onChange={handleChangeInput}
       />
     </Styled.Form>
   );
