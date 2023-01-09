@@ -2,7 +2,8 @@ import { Radio } from '@/components/registration';
 import { useRouter } from 'next/router';
 import { FormEventHandler, forwardRef } from 'react';
 import { z } from 'zod';
-import { PLATFORM_NAME_MAP } from '@/constants/platform';
+import { Platform, PLATFORM_NAME_MAP } from '@/constants/platform';
+import { GENERATE_ROUTES } from '@/constants/route';
 import * as Styled from './PlatformForm.styled';
 
 const schema = z.object({
@@ -26,7 +27,7 @@ const PlatformForm = forwardRef<HTMLFormElement, PlatformFormProps>(({ onFormCha
 
     if (result.success) {
       router.push({
-        pathname: `/generate/${result.data.platform}`,
+        pathname: GENERATE_ROUTES[result.data.platform as Platform],
         query: { name: router.query.name },
       });
     }
