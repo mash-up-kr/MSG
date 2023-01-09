@@ -15,10 +15,10 @@ export const BackLight = styled.div<{ platform?: Platform }>`
   ${({ theme, platform }) => css`
     position: absolute;
     top: -0.5rem;
-    width: 25rem;
-    height: 25rem;
+    width: 50rem;
+    height: 50rem;
     background: ${platform ? theme.color[platform] : theme.color.mashup};
-    border-radius: 25rem;
+    border-radius: 50rem;
     opacity: 0.8;
     filter: blur(3.03rem);
   `}
@@ -48,10 +48,10 @@ const sphereBackgrounds = {
 export const Sphere = styled.div<{ platform?: Platform }>`
   ${({ platform }) => css`
     position: absolute;
-    width: 30rem;
-    height: 30rem;
+    width: 60rem;
+    height: 60rem;
     background: ${platform ? sphereBackgrounds[platform] : sphereBackgrounds.mashup};
-    border-radius: 30rem;
+    border-radius: 60rem;
     box-shadow: ${platform ? boxShadows[platform] : boxShadows.mashup};
   `}
 `;
