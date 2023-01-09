@@ -9,6 +9,7 @@ export const SphereContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 15rem;
+  opacity: 0.7;
 `;
 
 export const BackLight = styled.div<{ platform?: Platform }>`
