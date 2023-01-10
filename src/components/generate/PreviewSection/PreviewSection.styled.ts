@@ -5,7 +5,7 @@ import MacBookSvg from '@/assets/svg/macbook.svg';
 import BubbleSvg from '@/assets/svg/bubble-tail.svg';
 import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
 import BeerSvg from '@/assets/svg/beer-bottom.svg';
-import WineSvg from '@/assets/svg/wine-bottom.svg';
+import { WineBottom as WineSvg } from '@/assets/svgComponent';
 import EnergySvg from '@/assets/svg/energy-bottom.svg';
 import { PreviewBackgroundColor } from './PreviewSection.component';
 
@@ -74,7 +74,7 @@ export const Wine = styled(WineSvg)`
     position: absolute;
     right: 1rem;
     bottom: 0;
-    z-index: ${theme?.zIndex?.snack};
+    z-index: ${theme.zIndex.snack};
   `}
 `;
 export const Beer = styled(BeerSvg)`
@@ -82,7 +82,7 @@ export const Beer = styled(BeerSvg)`
     position: absolute;
     right: 1rem;
     bottom: 0;
-    z-index: ${theme?.zIndex?.snack};
+    z-index: ${theme.zIndex.snack};
   `}
 `;
 export const Coffee = styled(CoffeeSvg)`
@@ -90,7 +90,7 @@ export const Coffee = styled(CoffeeSvg)`
     position: absolute;
     right: 1rem;
     bottom: 0;
-    z-index: ${theme?.zIndex?.snack};
+    z-index: ${theme.zIndex.snack};
   `}
 `;
 export const Energy = styled(EnergySvg)`
@@ -98,7 +98,7 @@ export const Energy = styled(EnergySvg)`
     position: absolute;
     right: 1rem;
     bottom: 0;
-    z-index: ${theme?.zIndex?.snack};
+    z-index: ${theme.zIndex.snack};
   `}
 `;
 

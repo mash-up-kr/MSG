@@ -11,3 +11,4 @@ export { default as Web } from './Web.component';
 export { default as Design } from './Design.component';
 export { default as Spring } from './Spring.component';
 export { default as Node } from './Node.component';
+export { default as WineBottom } from './WineBottom.component';

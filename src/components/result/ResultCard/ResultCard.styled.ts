@@ -5,7 +5,7 @@ import MashongSvg from '@/assets/svg/mashong.svg';
 import MacBookSvg from '@/assets/svg/macbook.svg';
 import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
 import BeerSvg from '@/assets/svg/beer-bottom.svg';
-import WineSvg from '@/assets/svg/wine-bottom.svg';
+import { WineBottom as WineSvg } from '@/assets/svgComponent';
 import EnergySvg from '@/assets/svg/energy-bottom.svg';
 import SnowSvg from '@/assets/svg/snow-bg.svg';
 import SunsetSvg from '@/assets/svgComponent/Sunset.component';
