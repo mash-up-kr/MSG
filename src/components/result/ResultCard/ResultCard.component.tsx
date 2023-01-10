@@ -15,6 +15,7 @@ import {
   Web,
   ios,
 } from '@/assets/svgComponent';
+import { forwardRef } from 'react';
 import * as Styled from './ResultCard.styled';
 
 const platformIcons = {
@@ -56,7 +57,7 @@ interface ResultCardProps {
   platformName: Platform;
 }
 
-const ResultCard = ({ platformName }: ResultCardProps) => {
+const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(({ platformName }, ref) => {
   const router = useRouter();
 
   const { query } = router;
@@ -75,7 +76,7 @@ const ResultCard = ({ platformName }: ResultCardProps) => {
   const BackgroundWindowImage = backgroundWindows[background];
 
   return (
-    <Styled.ResultCardContainer platform={platformName}>
+    <Styled.ResultCardContainer platform={platformName} ref={ref}>
       <Styled.ResultCard>
         <Styled.PlatformIconWrapper>
           <PlatformIcon />
@@ -110,6 +111,7 @@ const ResultCard = ({ platformName }: ResultCardProps) => {
       </Styled.LinearGradientSphereWrapper>
     </Styled.ResultCardContainer>
   );
-};
+});
 
+ResultCard.displayName = 'ResultCard';
 export default ResultCard;
