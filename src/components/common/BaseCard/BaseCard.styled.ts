@@ -60,7 +60,7 @@ export const HiddenMashong = styled(HiddenMashongSvg)`
   position: absolute;
   bottom: 0.5rem;
   left: 50%;
-  z-index: 1;
+  z-index: 5;
   transform: translateX(-50%);
 `;
 
