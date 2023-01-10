@@ -5,7 +5,7 @@ import * as Styled from './HomeContents.styled';
 const HomeContents = ({ children }: PropsWithChildren) => {
   return (
     <Styled.Container>
-      {children}
+      <Styled.ContentsContainer>{children}</Styled.ContentsContainer>
       <Styled.SphereContainer>
         <LinearGradientSphere />
       </Styled.SphereContainer>
