@@ -135,7 +135,7 @@ export const resetCss = css`
     color: #ffffff;
     font-family: 'Pretendard Variable', sans-serif;
     line-height: 1;
-    background-color: #18191c;
+    background-color: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -159,6 +159,7 @@ export const resetCss = css`
   }
 
   button {
+    font-family: inherit;
     border-color: transparent;
     cursor: pointer;
     user-select: none;
