@@ -157,32 +157,44 @@ export const Night = styled(NightSvg)`
 `;
 
 export const Wine = styled(WineSvg)`
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0;
-  width: 3.6rem;
-  height: 3.6rem;
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
 `;
 export const Beer = styled(BeerSvg)`
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0;
-  width: 3.6rem;
-  height: 3.6rem;
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
 `;
 export const Coffee = styled(CoffeeSvg)`
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0;
-  width: 3.6rem;
-  height: 3.6rem;
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
 `;
 export const Energy = styled(EnergySvg)`
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0;
-  width: 3.6rem;
-  height: 3.6rem;
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
 `;
 
 export const BubbleWrapper = styled.div`
