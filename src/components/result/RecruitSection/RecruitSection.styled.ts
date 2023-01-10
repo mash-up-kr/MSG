@@ -2,6 +2,10 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
+export const RecruitAnchor = styled.a`
+  margin: 3.2rem 0 4rem;
+`;
+
 export const RecruitSection = styled.section`
   ${({ theme }) => css`
     position: relative;
