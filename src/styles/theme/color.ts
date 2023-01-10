@@ -4,6 +4,7 @@ export const color = {
   gray900: '#18191C',
   gray700: '#2B2F3C',
   gray500: '#495066',
+  gray30: '#DEE2E6',
   white: '#ffffff',
   mashup: 'linear-gradient(98.54deg, #FF1C60 0%, #5243FF 100%)',
   ios: 'linear-gradient(134.55deg, #4A527C 15.9%, #ADBAFF 92.94%)',
