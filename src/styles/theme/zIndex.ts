@@ -1,5 +1,5 @@
 export const zIndex = {
-  Sphere: -5,
+  sphere: -5,
   default: 0,
 } as const;
 

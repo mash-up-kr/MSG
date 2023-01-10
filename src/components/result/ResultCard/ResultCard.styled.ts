@@ -204,7 +204,7 @@ export const LinearGradientSphereWrapper = styled.div`
     position: absolute;
     bottom: -7.5rem;
     left: 50%;
-    z-index: ${theme.zIndex.Sphere};
+    z-index: ${theme.zIndex.sphere};
     transform: translate3d(-50%, 0, 0);
   `}
 `;
