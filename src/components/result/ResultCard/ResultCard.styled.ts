@@ -19,6 +19,7 @@ export const ResultCardContainer = styled.div<{ platform: Platform }>`
     position: relative;
     width: 24rem;
     height: 36rem;
+    overflow: hidden;
     background: ${theme.color[platform]};
     background-origin: border-box;
     border: 0.3rem solid transparent;
