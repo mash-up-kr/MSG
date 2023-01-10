@@ -27,7 +27,7 @@ const BubbleWeb = ({ className, ...rest }: SVGAttributes<HTMLOrSVGElement>) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#0A31FF" />
-          <stop offset="1" stop-color="#0AB5FF" />
+          <stop offset="1" stopColor="#0AB5FF" />
         </linearGradient>
       </defs>
     </svg>

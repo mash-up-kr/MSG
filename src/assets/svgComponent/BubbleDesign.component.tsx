@@ -48,7 +48,7 @@ const BubbleDesign = ({ className, ...rest }: SVGAttributes<HTMLOrSVGElement>) =
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#6842FF" />
-          <stop offset="1" stop-color="#C446FF" />
+          <stop offset="1" stopColor="#C446FF" />
         </linearGradient>
       </defs>
     </svg>

@@ -26,8 +26,8 @@ const Spring = ({ className, ...rest }: SVGAttributes<HTMLOrSVGElement>) => {
           y2="-8.58864"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#1CFF77" />
-          <stop offset="1" stop-color="#43D2FF" />
+          <stop stopColor="#1CFF77" />
+          <stop offset="1" stopColor="#43D2FF" />
         </linearGradient>
       </defs>
     </svg>
