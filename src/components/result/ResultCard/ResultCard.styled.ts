@@ -83,14 +83,47 @@ export const MacBook = styled(MacBookSvg)`
   height: 3.6rem;
 `;
 
-export const MashongWrapper = styled.div<{ background: Background }>`
+export const MashongWrapper = styled.div`
+  position: relative;
+  width: 17rem;
+  height: 18rem;
+  margin: 1.4rem 0 0;
+  border-radius: 10.85rem 10.85rem 0px 0px;
+`;
+
+export const MashongBackground = styled.div<{ background: Background }>`
   ${({ theme, background }) => css`
     position: relative;
-    width: 18rem;
-    height: 18rem;
-    margin: 1.4rem 0 0;
+    width: 100%;
+    height: 100%;
     background: ${theme.color[background]};
-    border-radius: 8.1375rem 8.1375rem 0px 0px;
+    border-radius: 10.85rem 10.85rem 0px 0px;
+  `}
+`;
+
+export const PlatformBorder = styled.div<{ platform: Platform }>`
+  ${({ theme, platform }) => css`
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    width: 18.2rem;
+    height: 19.1rem;
+    overflow: hidden;
+    background: ${theme.color[platform]};
+    border-radius: 10.85rem 10.85rem 0px 0px;
+    transform: translate3d(-50%, 0, 0);
+  `}
+`;
+
+export const PlatformBorderBg = styled.div`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 0.1rem;
+    left: 0.1rem;
+    width: 18rem;
+    height: 18.9rem;
+    background: ${theme.color.black};
+    border-radius: 9rem 9rem 0 0;
   `}
 `;
 

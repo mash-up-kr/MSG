@@ -1,18 +1,20 @@
-import Android from '@/assets/svg/android.svg';
-import ios from '@/assets/svg/ios.svg';
-import Web from '@/assets/svg/web.svg';
-import Node from '@/assets/svg/node.svg';
-import Spring from '@/assets/svg/spring.svg';
-import Design from '@/assets/svg/design.svg';
-import BubbleAndroid from '@/assets/svg/bubble-android.svg';
-import Bubbleios from '@/assets/svg/bubble-ios.svg';
-import BubbleWeb from '@/assets/svg/bubble-web.svg';
-import BubbleSpring from '@/assets/svg/bubble-spring.svg';
-import BubbleNode from '@/assets/svg/bubble-node.svg';
-import BubbleDesign from '@/assets/svg/bubble-design.svg';
 import { useRouter } from 'next/router';
 import { Platform, PLATFORM_NAME_MAP } from '@/constants/platform';
 import { LinearGradientSphere } from '@/components/common';
+import {
+  BubbleAndroid,
+  BubbleDesign,
+  BubbleNode,
+  BubbleSpring,
+  BubbleWeb,
+  Bubbleios,
+  Android,
+  Design,
+  Node,
+  Spring,
+  Web,
+  ios,
+} from '@/assets/svgComponent';
 import * as Styled from './ResultCard.styled';
 
 const platformIcons = {
@@ -78,7 +80,11 @@ const ResultCard = ({ platformName }: ResultCardProps) => {
         <Styled.PlatformIconWrapper>
           <PlatformIcon />
         </Styled.PlatformIconWrapper>
-        <Styled.MashongWrapper background={background}>
+        <Styled.MashongWrapper>
+          <Styled.PlatformBorder platform={platformName}>
+            <Styled.PlatformBorderBg />
+          </Styled.PlatformBorder>
+          <Styled.MashongBackground background={background} />
           {BackgroundWindowImage && <BackgroundWindowImage />}
           <Styled.Mashong />
           <Styled.MacBook />
