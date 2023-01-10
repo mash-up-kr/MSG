@@ -1,9 +1,10 @@
+import MashupLogo from '@/assets/svg/mashup-logo.svg';
 import * as Styled from './Footer.styled';
 
 const Footer = () => {
   return (
     <Styled.Footer>
-      <Styled.MashUp>Mash-Up</Styled.MashUp>
+      <MashupLogo aria-label="Mash Up" />
       <Styled.IconContainer>
         <a href="https://www.instagram.com/official_mashup_/" target="_blank" rel="noreferrer">
           <Styled.InstagramDark />
