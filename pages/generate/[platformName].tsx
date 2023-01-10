@@ -19,7 +19,7 @@ interface GeneratePageProps {
   platformName: Platform;
 }
 
-const GeneratePage: NextPage<GeneratePageProps> = () => {
+const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
   const [currentBackground, setCurrentBackground] = useState<PreviewBackgroundColor>('black50');
   const [currentSnack, setCurrentSnack] = useState<PreviewSnack>(null);
   const [talkMySelf, setTalkMySelf] = useState('');
@@ -33,10 +33,10 @@ const GeneratePage: NextPage<GeneratePageProps> = () => {
   };
 
   const router = useRouter();
-  const platform = router.query.platformName as Platform;
-  const selectedOptionParams = new URLSearchParams(selectedOptions).toString();
+  const name = router.query.name as string;
+  const selectedOptionParams = new URLSearchParams({ ...selectedOptions, name }).toString();
   const handleGoToResultPage = () => {
-    router.push(`${RESULT_ROUTES[platform]}?${selectedOptionParams}`);
+    router.push(`${RESULT_ROUTES[platformName]}?${selectedOptionParams}`);
   };
 
   const handleBackToPrevPage = () => {
