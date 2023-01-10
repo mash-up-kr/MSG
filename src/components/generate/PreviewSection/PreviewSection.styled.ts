@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 import MashongSvg from '@/assets/svg/mashong.svg';
 import MacBookSvg from '@/assets/svg/macbook.svg';
 import BubbleSvg from '@/assets/svg/bubble-tail.svg';
+import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
+import BeerSvg from '@/assets/svg/beer-bottom.svg';
+import WineSvg from '@/assets/svg/wine-bottom.svg';
+import EnergySvg from '@/assets/svg/energy-bottom.svg';
 import { PreviewBackgroundColor } from './PreviewSection.component';
 
 export const PreviewSection = styled.section`
@@ -65,11 +69,37 @@ export const BackgroundWindowWrapper = styled.div`
   right: 3.2rem;
 `;
 
-export const SnackWrapper = styled.span`
-  position: absolute;
-  right: 1rem;
-  bottom: 0;
-  height: 4.8rem;
+export const Wine = styled(WineSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme?.zIndex?.snack};
+  `}
+`;
+export const Beer = styled(BeerSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme?.zIndex?.snack};
+  `}
+`;
+export const Coffee = styled(CoffeeSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme?.zIndex?.snack};
+  `}
+`;
+export const Energy = styled(EnergySvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme?.zIndex?.snack};
+  `}
 `;
 
 export const Bubble = styled.div`
