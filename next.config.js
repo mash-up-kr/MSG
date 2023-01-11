@@ -8,6 +8,16 @@ const nextConfig = {
       labelFormat: '[local]',
     },
   },
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/:path*',
+          destination: '/',
+        },
+      ],
+    };
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
