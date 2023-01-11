@@ -1,5 +1,5 @@
-import { Footer, NavigationBar } from '@/components/common';
-import { EventSection, RecruitSection, ResultCardSection, ResultLayout } from '@/components/result';
+import { NavigationBar } from '@/components/common';
+import { ResultCardSection, ResultLayout, PromotionSection } from '@/components/result';
 import { Platform } from '@/constants/platform';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -28,9 +28,7 @@ const ResultPage = ({ platformName }: ResultPageProps) => {
       />
       <ResultLayout>
         <ResultCardSection platformName={platformName} />
-        <EventSection />
-        <RecruitSection />
-        <Footer />
+        <PromotionSection />
       </ResultLayout>
     </>
   );
