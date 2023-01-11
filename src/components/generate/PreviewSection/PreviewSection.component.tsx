@@ -2,10 +2,6 @@ import Snow from '@/assets/svg/snow-bg.svg';
 import Sunset from '@/assets/svgComponent/Sunset.component';
 import Morning from '@/assets/svg/morning-bg.svg';
 import Night from '@/assets/svg/night-bg.svg';
-import Coffee from '@/assets/svg/coffee-bottom.svg';
-import Beer from '@/assets/svg/beer-bottom.svg';
-import Wine from '@/assets/svg/wine-bottom.svg';
-import Energy from '@/assets/svg/energy-bottom.svg';
 import { ChangeEventHandler, Dispatch, SetStateAction } from 'react';
 import * as Styled from './PreviewSection.styled';
 
@@ -16,7 +12,12 @@ const backgroundWindows = {
   morning: Morning,
   black50: null,
 };
-const snacks = { coffee: Coffee, beer: Beer, wine: Wine, energy: Energy };
+const snacks = {
+  coffee: Styled.Coffee,
+  beer: Styled.Beer,
+  wine: Styled.Wine,
+  energy: Styled.Energy,
+};
 
 export type PreviewBackgroundColor = 'night' | 'sunset' | 'morning' | 'snow' | 'black50';
 export type PreviewSnack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
@@ -56,9 +57,9 @@ const PreviewSection = ({
             </Styled.BackgroundWindowWrapper>
           )}
         </Styled.PreviewBackground>
+        {SnackImage && <SnackImage />}
         <Styled.Mashong />
         <Styled.MacBook />
-        <Styled.SnackWrapper>{snack && <SnackImage />}</Styled.SnackWrapper>
         {isVisibleTalkMySelf && (
           <Styled.Bubble>
             <Styled.TalkMySelfInput

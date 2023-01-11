@@ -1,4 +1,4 @@
-import useDetectViewportHeight from '@/components/hooks/useDetectViewportHeight';
+import useDetectViewportHeight from '@/hooks/useDetectViewportHeight';
 import { ReactNode } from 'react';
 import * as Styled from './Layout.styled';
 

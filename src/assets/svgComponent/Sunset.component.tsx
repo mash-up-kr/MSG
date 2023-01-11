@@ -1,6 +1,16 @@
-const SunsetBg = () => {
+import { SVGAttributes } from 'react';
+
+const SunsetBg = ({ className, ...rest }: SVGAttributes<HTMLOrSVGElement>) => {
   return (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      width="48"
+      height="48"
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
       <path
         d="M0 7.38462C0 3.30621 3.30621 0 7.38462 0H40.6154C44.6938 0 48 3.30621 48 7.38462V40.6154C48 44.6938 44.6938 48 40.6154 48H7.38462C3.30621 48 0 44.6938 0 40.6154V7.38462Z"
         fill="url(#paint0_linear_230_6551)"
