@@ -6,7 +6,7 @@ export const ResultCardSection = styled.section`
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  padding: 0 3rem;
+  padding: 3rem 3rem 0;
 `;
 
 export const EffectText = styled.div`
