@@ -1,3 +1,5 @@
+const BASE_URL = 'http://localhost:3000';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -13,7 +15,7 @@ const nextConfig = {
       fallback: [
         {
           source: '/:path*',
-          destination: '/',
+          destination: BASE_URL,
         },
       ],
     };
