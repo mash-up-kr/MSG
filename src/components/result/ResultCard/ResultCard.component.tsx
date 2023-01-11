@@ -15,6 +15,7 @@ import {
   Web,
   ios,
 } from '@/assets/svgComponent';
+import { forwardRef } from 'react';
 import * as Styled from './ResultCard.styled';
 
 const platformIcons = {
@@ -56,7 +57,7 @@ interface ResultCardProps {
   platformName: Platform;
 }
 
-const ResultCard = ({ platformName }: ResultCardProps) => {
+const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(({ platformName }, ref) => {
   const router = useRouter();
 
   const { query } = router;
@@ -75,41 +76,44 @@ const ResultCard = ({ platformName }: ResultCardProps) => {
   const BackgroundWindowImage = backgroundWindows[background];
 
   return (
-    <Styled.ResultCardContainer platform={platformName}>
-      <Styled.ResultCard>
-        <Styled.PlatformIconWrapper>
-          <PlatformIcon />
-        </Styled.PlatformIconWrapper>
-        <Styled.MashongWrapper>
-          <Styled.PlatformBorder platform={platformName}>
-            <Styled.PlatformBorderBg />
-          </Styled.PlatformBorder>
-          <Styled.MashongBackground background={background} />
-          {BackgroundWindowImage && <BackgroundWindowImage />}
-          <Styled.Mashong />
-          <Styled.MacBook />
-          {SnackImage && <SnackImage />}
-          {isVisibleTalkMySelf && (
-            <Styled.BubbleWrapper>
-              <PlatformBubble />
-              <Styled.TalkMySelf>{talkMySelf.slice(0, 8)}</Styled.TalkMySelf>
-            </Styled.BubbleWrapper>
-          )}
-        </Styled.MashongWrapper>
-        <Styled.PlatformName platform={platformName}>
-          {PLATFORM_NAME_MAP[platformName]}
-        </Styled.PlatformName>
-        <Styled.Name>{name?.slice(0, 6)}</Styled.Name>
+    <Styled.ResultCardContainer>
+      <Styled.ResultCard platform={platformName} ref={ref}>
+        <Styled.ResultCardBackground>
+          <Styled.PlatformIconWrapper>
+            <PlatformIcon />
+          </Styled.PlatformIconWrapper>
+          <Styled.MashongWrapper>
+            <Styled.PlatformBorder platform={platformName}>
+              <Styled.PlatformBorderBg />
+            </Styled.PlatformBorder>
+            <Styled.MashongBackground background={background} />
+            {BackgroundWindowImage && <BackgroundWindowImage />}
+            <Styled.Mashong />
+            <Styled.MacBook />
+            {SnackImage && <SnackImage />}
+            {isVisibleTalkMySelf && (
+              <Styled.BubbleWrapper>
+                <PlatformBubble />
+                <Styled.TalkMySelf>{talkMySelf.slice(0, 8)}</Styled.TalkMySelf>
+              </Styled.BubbleWrapper>
+            )}
+          </Styled.MashongWrapper>
+          <Styled.PlatformName platform={platformName}>
+            {PLATFORM_NAME_MAP[platformName]}
+          </Styled.PlatformName>
+          <Styled.Name>{name?.slice(0, 6)}</Styled.Name>
+        </Styled.ResultCardBackground>
+        <Styled.SparkleLeftTop />
+        <Styled.SparkleRightTop />
+        <Styled.SparkleLeftBottom />
+        <Styled.SparkleRightBottom />
       </Styled.ResultCard>
-      <Styled.SparkleLeftTop />
-      <Styled.SparkleRightTop />
-      <Styled.SparkleLeftBottom />
-      <Styled.SparkleRightBottom />
       <Styled.LinearGradientSphereWrapper>
         <LinearGradientSphere platform={platformName} />
       </Styled.LinearGradientSphereWrapper>
     </Styled.ResultCardContainer>
   );
-};
+});
 
+ResultCard.displayName = 'ResultCard';
 export default ResultCard;

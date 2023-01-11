@@ -1,5 +1,5 @@
-import { Footer, NavigationBar } from '@/components/common';
-import { EventSection, RecruitSection, ResultCardSection, ResultLayout } from '@/components/result';
+import { NavigationBar } from '@/components/common';
+import { ResultCardSection, ResultLayout, PromotionSection } from '@/components/result';
 import { Platform } from '@/constants/platform';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
@@ -17,7 +17,7 @@ interface ResultPageProps {
 const ResultPage = ({ platformName }: ResultPageProps) => {
   const router = useRouter();
   return (
-    <>
+    <ResultLayout>
       <NavigationBar
         rightButtonText="카드 다시 만들기"
         rightButtonColor="gray500"
@@ -26,13 +26,9 @@ const ResultPage = ({ platformName }: ResultPageProps) => {
         }}
         isHideBackButton
       />
-      <ResultLayout>
-        <ResultCardSection platformName={platformName} />
-        <EventSection />
-        <RecruitSection />
-        <Footer />
-      </ResultLayout>
-    </>
+      <ResultCardSection platformName={platformName} />
+      <PromotionSection />
+    </ResultLayout>
   );
 };
 

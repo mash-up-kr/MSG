@@ -14,11 +14,16 @@ import NightSvg from '@/assets/svg/night-bg.svg';
 import { Platform } from '@/constants/platform';
 import { Background } from './ResultCard.component';
 
-export const ResultCardContainer = styled.div<{ platform: Platform }>`
+export const ResultCardContainer = styled.div`
+  position: relative;
+`;
+
+export const ResultCard = styled.div<{ platform: Platform }>`
   ${({ theme, platform }) => css`
     position: relative;
     width: 24rem;
     height: 36rem;
+    overflow: hidden;
     background: ${theme.color[platform]};
     background-origin: border-box;
     border: 0.3rem solid transparent;
@@ -26,7 +31,7 @@ export const ResultCardContainer = styled.div<{ platform: Platform }>`
   `}
 `;
 
-export const ResultCard = styled.div`
+export const ResultCardBackground = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-flow: column nowrap;

@@ -5,6 +5,8 @@ export const ResultCardSection = styled.section`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  width: 100%;
+  padding: 3rem 3rem 0;
 `;
 
 export const EffectText = styled.div`
@@ -23,6 +25,6 @@ export const SaveAndShareContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 31.5rem;
-  margin: 4rem 0;
+  margin: 4rem 0 0;
   column-gap: 1.5rem;
 `;
