@@ -12,24 +12,26 @@ export const NavigationBar = styled.header`
     justify-content: space-between;
     width: 100%;
     min-height: 5.2rem;
-    padding: 0 2rem;
+    padding: 0 1.3rem 0 1rem;
     background: ${theme.color.gray900};
   `}
 `;
 
 export const BackButton = styled.button`
-  padding: 0.4rem 1rem 0.5rem 0.7rem;
+  padding: 1.4rem 2rem 1.4rem 1.7rem;
   background: transparent;
+  border: 0;
 `;
 
 export const LessThanIcon = styled(LessThan)``;
 
 export const RightButton = styled.button<{ color: KeyOf<ColorType> }>`
   ${({ theme, color }) => css`
-    padding: 0;
+    padding: 1.1rem 0.7rem 1rem;
     color: ${theme.color[color]};
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
     background: transparent;
     border: 0;
 
