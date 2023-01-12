@@ -9,7 +9,7 @@ import { RESULT_ROUTES } from '@/constants/route';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import type { ParsedUrlQuery } from 'querystring';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 interface Params extends ParsedUrlQuery {
   platformName: Platform;
@@ -24,6 +24,8 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
   const [currentSnack, setCurrentSnack] = useState<PreviewSnack>(null);
   const [talkMySelf, setTalkMySelf] = useState('');
   const [isVisibleTalkMySelf, setIsVisibleTalkMySelf] = useState(false);
+
+  const talkMySelfRef = useRef<HTMLInputElement>(null);
 
   const selectedOptions = {
     background: currentBackground,
@@ -57,6 +59,7 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
           talkMySelf={talkMySelf}
           setTalkMySelf={setTalkMySelf}
           isVisibleTalkMySelf={isVisibleTalkMySelf}
+          ref={talkMySelfRef}
         />
         <ControlSection
           currentBackground={currentBackground}
@@ -65,6 +68,7 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
           setCurrentBackground={setCurrentBackground}
           setCurrentSnack={setCurrentSnack}
           setIsVisibleTalkMySelf={setIsVisibleTalkMySelf}
+          talkMySelfRef={talkMySelfRef}
         />
       </GenerateLayout>
     </>
