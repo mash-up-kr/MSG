@@ -109,7 +109,6 @@ export const Bubble = styled.div`
     left: -1rem;
     width: 10.4rem;
     height: 3rem;
-    padding: 0.8rem;
     background: ${theme.color.gray700};
     border: 0;
     border-radius: 2rem;
@@ -124,16 +123,17 @@ export const BubbleTail = styled(BubbleSvg)`
 
 export const TalkMySelfInput = styled.input`
   ${({ theme }) => css`
-    width: 100%;
-    height: 100%;
+    width: 133.33%;
+    height: 133.33%;
     color: ${theme.color.white};
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     text-align: center;
     background: transparent;
     border: 0;
     outline: 0;
-
+    transform: scale(0.75);
+    transform-origin: left top;
     &:focus {
       border: 0;
     }
