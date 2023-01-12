@@ -10,7 +10,7 @@ const EventSection = () => {
       </Styled.Heading>
       <Styled.Event>
         <Styled.SubHeading>진행 기간</Styled.SubHeading>
-        <Styled.Paragraph>2023.01.11 ~ 01.25</Styled.Paragraph>
+        <Styled.Paragraph>2023.01.15 ~ 01.27</Styled.Paragraph>
       </Styled.Event>
       <Styled.Event>
         <Styled.SubHeading>미션 3개</Styled.SubHeading>
