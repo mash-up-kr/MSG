@@ -60,21 +60,24 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, r
   };
 
   return (
-    <Styled.Form onSubmit={handleSubmitForm} onChange={handleChangeForm} ref={ref}>
-      <Styled.Label htmlFor="name">이름(닉네임)을{'\n'}알려주세요</Styled.Label>
-      <Styled.Input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="김매숑"
-        autoFocus
-        required
-        minLength={2}
-        maxLength={6}
-        defaultValue={router.query.name}
-        onChange={handleChangeInput}
-      />
-    </Styled.Form>
+    <Styled.Container>
+      <Styled.Form onSubmit={handleSubmitForm} onChange={handleChangeForm} ref={ref}>
+        <Styled.Label htmlFor="name">이름(닉네임)을{'\n'}알려주세요</Styled.Label>
+        <Styled.Input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="김매숑"
+          autoFocus
+          required
+          minLength={1}
+          maxLength={6}
+          defaultValue={router.query.name}
+          onChange={handleChangeInput}
+        />
+      </Styled.Form>
+      <Styled.Note>최대 6글자 입력할 수 있어요</Styled.Note>
+    </Styled.Container>
   );
 });
 
