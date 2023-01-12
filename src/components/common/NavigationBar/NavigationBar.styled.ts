@@ -11,7 +11,7 @@ export const NavigationBar = styled.header`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 5.2rem;
+    height: 6rem;
     padding: 0 1rem;
     background: ${theme.color.gray900};
   `}
