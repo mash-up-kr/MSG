@@ -11,31 +11,45 @@ export const NavigationBar = styled.header`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 5.2rem;
-    padding: 0 2rem;
+    height: 6rem;
+    padding: 0 1rem;
     background: ${theme.color.gray900};
   `}
 `;
 
 export const BackButton = styled.button`
-  padding: 0.4rem 1rem 0.5rem 0.7rem;
-  background: transparent;
+  ${({ theme }) => css`
+    padding: 1.4rem 2rem 1.4rem 1.7rem;
+    background: transparent;
+    border: 0;
+    border-radius: 1.2rem;
+
+    &:active {
+      background: ${theme.color.gray700};
+    }
+  `}
 `;
 
 export const LessThanIcon = styled(LessThan)``;
 
 export const RightButton = styled.button<{ color: KeyOf<ColorType> }>`
   ${({ theme, color }) => css`
-    padding: 0;
+    padding: 1.05rem 1rem;
     color: ${theme.color[color]};
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
     background: transparent;
     border: 0;
+    border-radius: 1.2rem;
 
     &:disabled {
       color: ${theme.color.gray500};
       cursor: not-allowed;
+    }
+
+    &:active {
+      background: ${theme.color.gray700};
     }
   `}
 `;
