@@ -4,7 +4,7 @@ import { Platform } from '@/constants/platform';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
-import { REGISTRATION_ROUTES } from '@/constants/route';
+import { ROUTES } from '@/constants/route';
 
 interface Params extends ParsedUrlQuery {
   platformName: Platform;
@@ -22,7 +22,7 @@ const ResultPage = ({ platformName }: ResultPageProps) => {
         rightButtonText="카드 다시 만들기"
         rightButtonColor="gray500"
         rightButtonEvent={() => {
-          router.push(REGISTRATION_ROUTES.name);
+          router.push(ROUTES.home);
         }}
         isHideBackButton
       />
