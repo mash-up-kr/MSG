@@ -1,5 +1,5 @@
 import { KeyOf } from '@/types/helper';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, RefObject, SetStateAction } from 'react';
 import BackgroundOptions from '../BackgroundOptions/BackgroundOptions.component';
 import { PreviewBackgroundColor, PreviewSnack } from '../PreviewSection/PreviewSection.component';
 import SnackOptions from '../SnackOptions/SnackOptions.component';
@@ -21,6 +21,7 @@ interface CategoryOptionProps {
   setCurrentBackground: Dispatch<SetStateAction<PreviewBackgroundColor>>;
   setCurrentSnack: Dispatch<SetStateAction<PreviewSnack>>;
   setIsVisibleTalkMySelf: Dispatch<SetStateAction<boolean>>;
+  talkMySelfRef: RefObject<HTMLInputElement>;
 }
 
 const CategoryOption = ({
@@ -31,6 +32,7 @@ const CategoryOption = ({
   setCurrentBackground,
   setCurrentSnack,
   setIsVisibleTalkMySelf,
+  talkMySelfRef,
 }: CategoryOptionProps) => {
   switch (currentCategory) {
     case 'background':
@@ -47,6 +49,7 @@ const CategoryOption = ({
         <TalkMySelfControl
           isVisibleTalkMySelf={isVisibleTalkMySelf}
           setIsVisibleTalkMySelf={setIsVisibleTalkMySelf}
+          talkMySelfRef={talkMySelfRef}
         />
       );
   }

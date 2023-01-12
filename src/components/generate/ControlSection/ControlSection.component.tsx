@@ -1,5 +1,5 @@
 import { Button } from '@/components/common';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, RefObject, SetStateAction, useState } from 'react';
 import * as Styled from './ControlSection.styled';
 import type {
   PreviewBackgroundColor,
@@ -18,6 +18,7 @@ interface ControlSectionProps {
   setCurrentBackground: Dispatch<SetStateAction<PreviewBackgroundColor>>;
   setCurrentSnack: Dispatch<SetStateAction<PreviewSnack>>;
   setIsVisibleTalkMySelf: Dispatch<SetStateAction<boolean>>;
+  talkMySelfRef: RefObject<HTMLInputElement>;
 }
 
 const ControlSection = ({
@@ -27,6 +28,7 @@ const ControlSection = ({
   setCurrentBackground,
   setCurrentSnack,
   setIsVisibleTalkMySelf,
+  talkMySelfRef,
 }: ControlSectionProps) => {
   const [currentCategory, setCurrentCategory] = useState<ControlCategory>('background');
 
@@ -56,6 +58,7 @@ const ControlSection = ({
         setCurrentBackground={setCurrentBackground}
         setCurrentSnack={setCurrentSnack}
         setIsVisibleTalkMySelf={setIsVisibleTalkMySelf}
+        talkMySelfRef={talkMySelfRef}
       />
     </Styled.ControlSection>
   );

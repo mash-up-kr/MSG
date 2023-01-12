@@ -39,12 +39,15 @@ export const SparkleRight = styled(SparkleSvg)`
 `;
 
 export const Event = styled.div`
-  margin-top: 1.6rem;
+  margin-top: 2rem;
+
+  &:first-of-type {
+    margin-top: 1.6rem;
+  }
 `;
 
 export const SubHeading = styled.h4`
   ${({ theme }) => css`
-    margin-bottom: 0.3rem;
     color: ${theme.color.white};
     font-weight: 400;
     font-size: 1.4rem;
@@ -54,7 +57,7 @@ export const SubHeading = styled.h4`
 
 export const Paragraph = styled.p`
   ${({ theme }) => css`
-    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
     color: ${theme.color.white};
     font-weight: 400;
     font-size: 1.4rem;
@@ -62,8 +65,8 @@ export const Paragraph = styled.p`
     white-space: pre-wrap;
     opacity: 0.5;
 
-    &:last-of-type {
-      margin-bottom: 0;
+    &:first-of-type {
+      margin-top: 0.4rem;
     }
   `}
 `;
