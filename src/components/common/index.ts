@@ -6,3 +6,4 @@ export { default as Footer } from './Footer/Footer.component';
 export { default as BaseCard } from './BaseCard/BaseCard.component';
 export { default as Portal } from './Portal/Portal.component';
 export { default as Modal } from './Modal/Modal.component';
+export { default as ConfirmModalDialog } from './ConfirmModalDialog/ConfirmModalDialog.component';
