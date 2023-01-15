@@ -2,7 +2,7 @@ import { toPng } from 'html-to-image';
 import { RefObject, useCallback } from 'react';
 
 const useDownloadElementToImage = <T extends HTMLElement>(ref: RefObject<T>, filename: string) => {
-  const handleSaveImage = useCallback(() => {
+  const saveImage = useCallback(() => {
     if (ref.current === null) {
       return;
     }
@@ -19,7 +19,7 @@ const useDownloadElementToImage = <T extends HTMLElement>(ref: RefObject<T>, fil
       });
   }, [ref, filename]);
 
-  return { handleSaveImage };
+  return { saveImage };
 };
 
 export default useDownloadElementToImage;
