@@ -1,7 +1,7 @@
 import { color } from '@/styles/theme/color';
 import { toPng } from 'html-to-image';
 import { RefObject, useCallback } from 'react';
-import useWebShare from './useWebShare';
+import useWebShare from '@/hooks/useWebShare';
 
 const useDownloadElementToImage = <T extends HTMLElement>(ref: RefObject<T>, filename: string) => {
   const { isSupported, share } = useWebShare();
