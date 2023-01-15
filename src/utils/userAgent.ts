@@ -84,3 +84,7 @@ export type UserAgentOS = NonNullable<ReturnType<typeof getUserAgentOS>>;
 export const detectOS = (os: UserAgentOS) => {
   return getUserAgentOS(window.navigator) === os;
 };
+
+export const detectInAppBrowser = (app: InAppBrowser) => {
+  return getInAppBrowser(window.navigator) === app;
+};
