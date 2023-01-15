@@ -76,8 +76,8 @@ const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(({ platformName }
   const BackgroundWindowImage = backgroundWindows[background];
 
   return (
-    <Styled.ResultCardContainer>
-      <Styled.ResultCard platform={platformName} ref={ref}>
+    <Styled.ResultCardContainer ref={ref}>
+      <Styled.ResultCard platform={platformName}>
         <Styled.ResultCardBackground>
           <Styled.PlatformIconWrapper>
             <PlatformIcon />
