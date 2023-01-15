@@ -3,7 +3,6 @@ import { ResultCard } from '@/components/result';
 import { Platform, PLATFORM_NAME_MAP } from '@/constants/platform';
 import { useRef, useState } from 'react';
 import useDownloadElementToImage from '@/hooks/useDownloadElementToImage';
-import { detectInAppBrowser } from '@/utils/userAgent';
 import useCopyToClipboard from '@/hooks/useCopyClipboard';
 import useWebShare from '@/hooks/useWebShare';
 import * as Styled from './ResultCardSection.styled';
@@ -30,11 +29,6 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
   });
 
   const handleSaveImage = () => {
-    if (detectInAppBrowser('KAKAO')) {
-      setIsOpenCopyLinkModal(true);
-      return;
-    }
-
     saveImage();
   };
 
