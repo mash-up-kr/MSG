@@ -7,6 +7,10 @@ import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
 import BeerSvg from '@/assets/svg/beer-bottom.svg';
 import { WineBottom as WineSvg } from '@/assets/svgComponent';
 import EnergySvg from '@/assets/svg/energy-bottom.svg';
+import SnowSvg from '@/assets/svg/snow-bg.svg';
+import SunsetSvg from '@/assets/svgComponent/Sunset.component';
+import MorningSvg from '@/assets/svg/morning-bg.svg';
+import NightSvg from '@/assets/svg/night-bg.svg';
 import { PreviewBackgroundColor } from './PreviewSection.component';
 
 export const PreviewSection = styled.section`
@@ -63,7 +67,26 @@ export const PreviewBackground = styled.div<{ backgroundColor: PreviewBackground
   `}
 `;
 
-export const BackgroundWindowWrapper = styled.div`
+export const Night = styled(NightSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const Sunset = styled(SunsetSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    top: 5.4rem;
+    right: 3.2rem;
+    background: ${theme.color.sunsetWindow};
+    border-radius: 0.738rem;
+  `}
+`;
+export const Morning = styled(MorningSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const Snow = styled(SnowSvg)`
   position: absolute;
   top: 5.4rem;
   right: 3.2rem;
