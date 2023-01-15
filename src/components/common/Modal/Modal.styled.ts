@@ -2,14 +2,17 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const OverSizeModal = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 200vh;
-  background: rgba(0, 0, 0, 0.5);
+  ${({ theme }) => css`
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: ${theme.zIndex.modal};
+    width: 100vw;
+    height: 200vh;
+    background: rgba(0, 0, 0, 0.5);
+  `}
 `;
 
 export const Modal = styled.div`
