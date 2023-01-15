@@ -7,7 +7,7 @@ import { REGISTRATION_ROUTES } from '@/constants/route';
 import * as Styled from './NameForm.styled';
 
 const schema = z.object({
-  name: z.string().min(2).max(6),
+  name: z.string().min(1).max(6),
 });
 
 interface NameFormProps {
