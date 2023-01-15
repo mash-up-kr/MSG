@@ -1,16 +1,10 @@
-const getTitle = (title?: string) => {
-  if (!title) {
-    return document.title;
-  }
-  return title;
-};
-
 export const shareContent = (onSuccess: () => void, onError: () => void) => {
   return (shareData: ShareData = {}) => {
     navigator
       .share({
+        files: shareData.files,
         text: shareData.text,
-        title: getTitle(shareData.title),
+        title: shareData.title,
         url: shareData.url,
       })
       .then(onSuccess)
