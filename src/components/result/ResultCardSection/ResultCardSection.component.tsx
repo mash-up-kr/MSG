@@ -6,6 +6,8 @@ import useDownloadElementToImage from '@/hooks/useDownloadElementToImage';
 import useWebShare from '@/hooks/useWebShare';
 import { copyToClipboard } from '@/utils/clipboard';
 import { ROUTES } from '@/constants/route';
+import { toPng } from 'html-to-image';
+import { color } from '@/styles/theme/color';
 import * as Styled from './ResultCardSection.styled';
 
 interface ResultCardSectionProps {
@@ -19,11 +21,29 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
   const { handleSaveImage } = useDownloadElementToImage(resultCardRef, resultFileName);
   const { isSupported, share } = useWebShare();
 
-  const handleShareLink = () => {
+  const handleShareImage = () => {
     if (!isSupported) {
       copyToClipboard(`${window.location.origin}${ROUTES.home}`);
     } else {
-      share({ url: `${window.location.origin}${ROUTES.home}` });
+      if (!resultCardRef.current) return;
+
+      toPng(resultCardRef.current, {
+        cacheBust: true,
+        width: 480,
+        height: 720,
+        style: {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: color.black,
+        },
+      }).then(async (dataUrl) => {
+        const response = await fetch(dataUrl);
+        const blob = await response.blob();
+        const file = new File([blob], resultFileName, { type: blob.type });
+
+        share({ files: [file] });
+      });
     }
   };
 
@@ -35,7 +55,7 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
         <Button size="l" isSelected={false} onClick={handleSaveImage}>
           카드 저장하기
         </Button>
-        <Button size="l" isSelected onClick={handleShareLink}>
+        <Button size="l" isSelected onClick={handleShareImage}>
           공유하기
         </Button>
       </Styled.SaveAndShareContainer>
