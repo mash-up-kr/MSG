@@ -233,6 +233,7 @@ export const PlatformName = styled.span<{ platform: Platform }>`
     color: ${theme.color.black};
     font-weight: 800;
     font-size: 1.4rem;
+    white-space: nowrap;
     text-align: center;
     background: ${theme.color[platform]};
     border-radius: 2rem;
@@ -241,6 +242,8 @@ export const PlatformName = styled.span<{ platform: Platform }>`
 
 export const Name = styled.span`
   ${({ theme }) => css`
+    display: inline-block;
+    width: 100%;
     color: ${theme.color.white};
     font-weight: 700;
     font-size: 2.4rem;
