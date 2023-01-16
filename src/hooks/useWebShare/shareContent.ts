@@ -4,10 +4,10 @@ export const shareContent = (onSuccess: () => void, onError: (error?: unknown) =
       .share({ files, text, title, url })
       .then(onSuccess)
       .catch((error) => {
+        onError();
         if (error.name === 'NotAllowedError') {
           window.location.reload();
         }
-        onError();
       });
   };
 };
