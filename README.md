@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![매숑이와 함께하는 연봉 쭉쭉 오르는 내 직군 카드 만들기](public/readme/msg-main-img-2x-min.png)
 
-## Getting Started
+# [MSG](https://recruit-event.mash-up.kr)
 
-First, run the development server:
+MSG는 Mash-Up의 공식 캐릭터인 매숑이가 담긴 나만의 IT 직군 카드를 만드는 서비스로 MaShong Generator의 약어 입니다.
+지금 MSG로 나만의 직군 카드도 만들고 Mash-Up Recruiting 기간 한정 이벤트도 참여해보세요!
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 🚀서비스 기능 소개
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| <img width="200px" src="public/readme/index-page-min.jpg" alt=""> | <img width="200px" src="public/readme/name-min.jpg" alt="">         |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| 나만의 직군 카드 만들기                                           | 직군 카드 이름 입력                                                 |
+| <img width="200px" src="public/readme/platform-min.jpg" alt="">   | <img width="200px" src="public/readme/generate-1-min.jpg" alt="">   |
+| 직군 선택                                                         | 직군 카드 꾸미기                                                    |
+| <img width="200px" src="public/readme/generate-2-min.jpg" alt=""> | <img width="200px" src="public/readme/result-min.jpg" alt="">       |
+| 직군 카드 꾸미기                                                  | 카드 생성 결과                                                      |
+| <img width="200px" src="public/readme/event-min.jpg" alt="">      | <img width="200px" src="public/readme/save-min.jpg" alt="">         |
+| 이벤트 안내                                                       | 카드 저장 및 공유하기                                               |
+| <img width="200px" src="public/readme/share-min.jpg" alt="">      | <img width="200px" src="public/readme/result-image-min.png" alt=""> |
+| 링크 공유하기                                                     | 저장된 카드 이미지                                                  |
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🔧 사용한 기술
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 메인: Next, React, TypeScript
+- 스타일: Emotion
+- 모듈,번듈러: Webpack
+- 패키지 매니저: Yarn
