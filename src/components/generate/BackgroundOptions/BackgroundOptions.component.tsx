@@ -32,6 +32,11 @@ interface BackgroundOptionsProps {
 
 const BackgroundOptions = ({ currentBackground, setCurrentBackground }: BackgroundOptionsProps) => {
   const handleChangeCurrentBackground = (background: PreviewBackgroundColor) => {
+    if (background === currentBackground) {
+      setCurrentBackground('black50');
+      return;
+    }
+
     setCurrentBackground(background);
   };
   return (
