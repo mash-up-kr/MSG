@@ -19,28 +19,11 @@ export const PreviewSection = styled.section`
   justify-content: space-between;
 `;
 
-export const Paragraph = styled.p`
-  ${({ theme }) => css`
-    color: ${theme.color.white};
-    font-weight: 700;
-    font-size: 2.4rem;
-    line-height: 1.2;
-    white-space: pre-wrap;
-    text-align: center;
-  `}
-`;
-
-export const MarginBox = styled.div`
-  height: 4.5vh;
-  min-height: 3rem;
-  max-height: 6rem;
-`;
-
 export const Preview = styled.div`
   position: relative;
   width: 22.6rem;
   height: 24rem;
-  margin: 8.867vh auto 0;
+  margin: 0 auto;
 `;
 
 export const Mashong = styled(MashongSvg)`

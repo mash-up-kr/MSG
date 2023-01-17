@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ControlSection = styled.section`
-  margin-top: 4.5vh;
+  margin-top: 3rem;
 `;
 
 export const Categories = styled.div`
