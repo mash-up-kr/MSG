@@ -1,8 +1,12 @@
 import * as Styled from './BaseCard.styled';
 
-const BaseCard = () => {
+interface BaseCardProps {
+  className: string;
+}
+
+const BaseCard = ({ className }: BaseCardProps) => {
   return (
-    <Styled.Container>
+    <Styled.Container className={className}>
       <Styled.Twinkles>
         <Styled.Twinkle inverted="true" />
         <Styled.Twinkle />
