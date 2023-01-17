@@ -57,7 +57,7 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
       {isOpenCopyLinkModal && (
         <ConfirmModalDialog
           heading="링크 복사하기"
-          paragraph={`${BASE_URL}이${'\n'} 클립보드에 복사됩니다`}
+          paragraph={`${BASE_URL}이${'\n'}클립보드에 복사됩니다`}
           approvalButtonMessage="링크 복사"
           cancelButtonMessage="취소"
           handleApprovalButton={copy}
