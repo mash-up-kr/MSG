@@ -1,7 +1,16 @@
 import TwinkleSvg from '@/assets/svg/twinkle.svg';
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 import HiddenMashongSvg from '@/assets/svg/hidden-mashong.svg';
+
+const shakeCard = keyframes`
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+`;
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -14,6 +23,7 @@ export const Container = styled.div`
       ${theme.color.mashup} border-box;
     border: 0.2rem solid transparent;
     border-radius: 2rem;
+    animation: ${shakeCard} 2s infinite alternate ease-in-out;
   `}
 `;
 
