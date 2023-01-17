@@ -39,8 +39,6 @@ const PreviewSection = forwardRef<HTMLInputElement, PreviewSectionProps>(
 
     return (
       <Styled.PreviewSection>
-        <Styled.MarginBox />
-        <Styled.Paragraph>매숑이의 {'\n'}작업 환경을 만들어주세요</Styled.Paragraph>
         <Styled.Preview>
           <Styled.PreviewBackground backgroundColor={backgroundColor}>
             {BackgroundWindowImage && <BackgroundWindowImage />}

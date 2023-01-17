@@ -9,6 +9,7 @@ export const OptionItem = styled.li<{ isSelected: boolean }>`
     border: 0.2rem solid ${isSelected ? 'transparent' : theme.color.gray700};
     border-radius: 1.3rem;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   `}
 `;
 

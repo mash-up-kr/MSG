@@ -6,7 +6,13 @@ interface GenerateLayoutProps {
 }
 
 const GenerateLayout = ({ children }: GenerateLayoutProps) => {
-  return <Styled.GenerateLayout>{children}</Styled.GenerateLayout>;
+  return (
+    <Styled.GenerateLayout>
+      <Styled.BackgroundTop />
+      {children}
+      <Styled.BackgroundBottom />
+    </Styled.GenerateLayout>
+  );
 };
 
 export default GenerateLayout;

@@ -1,5 +1,10 @@
 import { NavigationBar } from '@/components/common';
-import { ControlSection, GenerateLayout, PreviewSection } from '@/components/generate';
+import {
+  ControlSection,
+  DescriptionSection,
+  GenerateLayout,
+  PreviewSection,
+} from '@/components/generate';
 import type {
   PreviewBackgroundColor,
   PreviewSnack,
@@ -53,6 +58,7 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
         rightButtonEvent={handleGoToResultPage}
       />
       <GenerateLayout>
+        <DescriptionSection />
         <PreviewSection
           backgroundColor={currentBackground}
           snack={currentSnack}

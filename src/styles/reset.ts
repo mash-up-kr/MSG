@@ -147,11 +147,13 @@ export const resetCss = css`
   body *::before,
   body *::after {
     box-sizing: border-box;
+    user-select: none;
   }
 
   a {
     color: #ffffff;
     text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
 
   img {
@@ -163,6 +165,7 @@ export const resetCss = css`
     border-color: transparent;
     cursor: pointer;
     user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
     &:disabled {
       cursor: not-allowed;
