@@ -32,6 +32,11 @@ interface SnackOptionsProps {
 
 const SnackOptions = ({ currentSnack, setCurrentSnack }: SnackOptionsProps) => {
   const handleChangeCurrentBackground = (snack: PreviewSnack) => {
+    if (snack === currentSnack) {
+      setCurrentSnack(null);
+      return;
+    }
+
     setCurrentSnack(snack);
   };
   return (
