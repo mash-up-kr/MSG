@@ -147,6 +147,7 @@ export const resetCss = css`
   body *::before,
   body *::after {
     box-sizing: border-box;
+    user-select: none;
   }
 
   a {
