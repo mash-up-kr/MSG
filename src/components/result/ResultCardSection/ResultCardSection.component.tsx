@@ -24,12 +24,12 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
 
   const { copy } = useCopyToClipboard(BASE_URL, {
     onSuccess: () => {
-      toast.custom((t) => <Toast status="success" content="링크 복사 완료!" id={t.id} />, {
+      toast.custom(({ id }) => <Toast status="success" content="링크 복사 완료!" id={id} />, {
         duration: 1500,
       });
     },
     onError: () => {
-      toast.custom((t) => <Toast status="error" content="다시 시도해주세요!" id={t.id} />, {
+      toast.custom(({ id }) => <Toast status="error" content="다시 시도해주세요!" id={id} />, {
         duration: 1500,
       });
     },
