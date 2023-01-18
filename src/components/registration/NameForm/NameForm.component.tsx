@@ -69,6 +69,7 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, r
           name="name"
           placeholder="김매숑"
           autoFocus
+          autoComplete="off"
           required
           minLength={1}
           maxLength={6}
