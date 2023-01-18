@@ -3,10 +3,14 @@ import styled from '@emotion/styled';
 import SparkleSvg from '@/assets/svg/sparkle.svg';
 
 export const EventSection = styled.section`
-  width: 31.5rem;
-  padding: 2.4rem 2rem;
-  background: linear-gradient(98.54deg, rgba(255, 28, 96, 0.2) 0%, rgba(82, 67, 255, 0.2) 100%);
-  border-radius: 1.2rem;
+  ${({ theme }) => css`
+    ${theme.animation.fadeUp({ duration: 0.8, delay: 0.3, move: 4 })};
+    width: 31.5rem;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(98.54deg, rgba(255, 28, 96, 0.2) 0%, rgba(82, 67, 255, 0.2) 100%);
+    border-radius: 1.2rem;
+    opacity: 0;
+  `}
 `;
 
 export const Heading = styled.h3`

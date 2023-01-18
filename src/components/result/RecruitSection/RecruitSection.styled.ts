@@ -3,7 +3,11 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const RecruitAnchor = styled.a`
-  margin: 3.2rem 0 4rem;
+  ${({ theme }) => css`
+    ${theme.animation.fadeUp({ duration: 0.8, delay: 0.3, move: 4 })};
+    margin: 3.2rem 0 4rem;
+    opacity: 0;
+  `}
 `;
 
 export const RecruitSection = styled.section`
