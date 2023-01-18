@@ -1,5 +1,4 @@
 import { Button, ConfirmModalDialog } from '@/components/common';
-import { ResultCard } from '@/components/result';
 import { Platform, PLATFORM_NAME_MAP } from '@/constants/platform';
 import { useRef, useState } from 'react';
 import useDownloadElementToImage from '@/hooks/useDownloadElementToImage';
@@ -44,7 +43,7 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
     <>
       <Styled.ResultCardSection>
         <Styled.EffectText>연봉아 올라라{'\n'}내 직군 카드 완성!</Styled.EffectText>
-        <ResultCard platformName={platformName} ref={resultCardRef} />
+        <Styled.FadeUpResultCard platformName={platformName} ref={resultCardRef} />
         <Styled.SaveAndShareContainer>
           <Button size="l" isSelected={false} onClick={handleSaveImage}>
             카드 저장하기

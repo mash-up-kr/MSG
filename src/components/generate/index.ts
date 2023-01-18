@@ -8,3 +8,4 @@ export { default as SnackOptions } from './SnackOptions/SnackOptions.component';
 export { default as TalkMySelfControl } from './TalkMySelfControl/TalkMySelfControl.component';
 export { default as CategoryOption } from './CategoryOption/CategoryOption.component';
 export { default as DescriptionSection } from './DescriptionSection/DescriptionSection.component';
+export { default as InteractionSection } from './InteractionSection/InteractionSection.component';

@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import ResultCard from '../ResultCard/ResultCard.component';
 
 export const ResultCardSection = styled.section`
   display: flex;
@@ -11,6 +12,7 @@ export const ResultCardSection = styled.section`
 
 export const EffectText = styled.div`
   ${({ theme }) => css`
+    ${theme.animation.fadeUp({ duration: 0.8, move: 2 })};
     margin-bottom: 4rem;
     color: ${theme.color.white};
     font-weight: 700;
@@ -21,10 +23,20 @@ export const EffectText = styled.div`
   `}
 `;
 
+export const FadeUpResultCard = styled(ResultCard)`
+  ${({ theme }) => css`
+    ${theme.animation.fadeUp({ duration: 0.8, move: 4 })}
+  `}
+`;
+
 export const SaveAndShareContainer = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 31.5rem;
-  margin: 4rem 0 0;
-  column-gap: 1.5rem;
+  ${({ theme }) => css`
+    ${theme.animation.fadeUp({ duration: 0.8, delay: 0.1, move: 4 })};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 31.5rem;
+    margin: 4rem 0 0;
+    column-gap: 1.5rem;
+    opacity: 0;
+  `}
 `;

@@ -55,65 +55,68 @@ export type Snack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
 
 interface ResultCardProps {
   platformName: Platform;
+  className?: string;
 }
 
-const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(({ platformName }, ref) => {
-  const router = useRouter();
+const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(
+  ({ platformName, className }, ref) => {
+    const router = useRouter();
 
-  const { query } = router;
+    const { query } = router;
 
-  const [background, snack, talkMySelf, isVisibleTalkMySelf, name] = [
-    query.background as Background,
-    query.snack as Snack,
-    query.talkMySelf as string,
-    query.isVisibleTalkMySelf === 'true',
-    query.name as string,
-  ];
+    const [background, snack, talkMySelf, isVisibleTalkMySelf, name] = [
+      query.background as Background,
+      query.snack as Snack,
+      query.talkMySelf as string,
+      query.isVisibleTalkMySelf === 'true',
+      query.name as string,
+    ];
 
-  const PlatformIcon = platformIcons[platformName];
-  const PlatformBubble = platformBubbles[platformName];
-  const SnackImage = snack ? snacks[snack] : null;
-  const BackgroundWindowImage = backgroundWindows[background];
+    const PlatformIcon = platformIcons[platformName];
+    const PlatformBubble = platformBubbles[platformName];
+    const SnackImage = snack ? snacks[snack] : null;
+    const BackgroundWindowImage = backgroundWindows[background];
 
-  return (
-    <Styled.ResultCardContainer ref={ref}>
-      <Styled.ResultCard platform={platformName}>
-        <Styled.ResultCardBackground>
-          <Styled.PlatformIconWrapper>
-            <PlatformIcon />
-          </Styled.PlatformIconWrapper>
-          <Styled.MashongWrapper>
-            <Styled.PlatformBorder platform={platformName}>
-              <Styled.PlatformBorderBg />
-            </Styled.PlatformBorder>
-            <Styled.MashongBackground background={background} />
-            {BackgroundWindowImage && <BackgroundWindowImage />}
-            <Styled.Mashong />
-            <Styled.MacBook />
-            {SnackImage && <SnackImage />}
-            {isVisibleTalkMySelf && (
-              <Styled.BubbleWrapper>
-                <PlatformBubble />
-                <Styled.TalkMySelf>{talkMySelf.slice(0, 8)}</Styled.TalkMySelf>
-              </Styled.BubbleWrapper>
-            )}
-          </Styled.MashongWrapper>
-          <Styled.PlatformName platform={platformName}>
-            {PLATFORM_NAME_MAP[platformName]}
-          </Styled.PlatformName>
-          <Styled.Name>{name?.slice(0, 6)}</Styled.Name>
-        </Styled.ResultCardBackground>
-        <Styled.SparkleLeftTop />
-        <Styled.SparkleRightTop />
-        <Styled.SparkleLeftBottom />
-        <Styled.SparkleRightBottom />
-      </Styled.ResultCard>
-      <Styled.LinearGradientSphereWrapper>
-        <LinearGradientSphere platform={platformName} />
-      </Styled.LinearGradientSphereWrapper>
-    </Styled.ResultCardContainer>
-  );
-});
+    return (
+      <Styled.ResultCardContainer ref={ref}>
+        <Styled.ResultCard platform={platformName} className={className}>
+          <Styled.ResultCardBackground>
+            <Styled.PlatformIconWrapper>
+              <PlatformIcon />
+            </Styled.PlatformIconWrapper>
+            <Styled.MashongWrapper>
+              <Styled.PlatformBorder platform={platformName}>
+                <Styled.PlatformBorderBg />
+              </Styled.PlatformBorder>
+              <Styled.MashongBackground background={background} />
+              {BackgroundWindowImage && <BackgroundWindowImage />}
+              <Styled.Mashong />
+              <Styled.MacBook />
+              {SnackImage && <SnackImage />}
+              {isVisibleTalkMySelf && (
+                <Styled.BubbleWrapper>
+                  <PlatformBubble />
+                  <Styled.TalkMySelf>{talkMySelf.slice(0, 8)}</Styled.TalkMySelf>
+                </Styled.BubbleWrapper>
+              )}
+            </Styled.MashongWrapper>
+            <Styled.PlatformName platform={platformName}>
+              {PLATFORM_NAME_MAP[platformName]}
+            </Styled.PlatformName>
+            <Styled.Name>{name?.slice(0, 6)}</Styled.Name>
+          </Styled.ResultCardBackground>
+          <Styled.SparkleLeftTop />
+          <Styled.SparkleRightTop />
+          <Styled.SparkleLeftBottom />
+          <Styled.SparkleRightBottom />
+        </Styled.ResultCard>
+        <Styled.LinearGradientSphereWrapper>
+          <LinearGradientSphere platform={platformName} />
+        </Styled.LinearGradientSphereWrapper>
+      </Styled.ResultCardContainer>
+    );
+  },
+);
 
 ResultCard.displayName = 'ResultCard';
 export default ResultCard;

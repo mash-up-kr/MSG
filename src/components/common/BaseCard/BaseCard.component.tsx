@@ -1,7 +1,7 @@
 import * as Styled from './BaseCard.styled';
 
 interface BaseCardProps {
-  className: string;
+  className?: string;
 }
 
 const BaseCard = ({ className }: BaseCardProps) => {

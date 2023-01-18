@@ -4,6 +4,7 @@ import {
   DescriptionSection,
   GenerateLayout,
   PreviewSection,
+  InteractionSection,
 } from '@/components/generate';
 import type {
   PreviewBackgroundColor,
@@ -29,6 +30,7 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
   const [currentSnack, setCurrentSnack] = useState<PreviewSnack>(null);
   const [talkMySelf, setTalkMySelf] = useState('');
   const [isVisibleTalkMySelf, setIsVisibleTalkMySelf] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const talkMySelfRef = useRef<HTMLInputElement>(null);
 
@@ -43,14 +45,19 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
   const name = router.query.name as string;
   const selectedOptionParams = new URLSearchParams({ ...selectedOptions, name }).toString();
   const handleGoToResultPage = () => {
-    router.push(`${RESULT_ROUTES[platformName]}?${selectedOptionParams}`);
+    setIsGenerating(true);
+    setTimeout(() => {
+      router.push(`${RESULT_ROUTES[platformName]}?${selectedOptionParams}`);
+    }, 2000);
   };
 
   const handleBackToPrevPage = () => {
     router.back();
   };
 
-  return (
+  return isGenerating ? (
+    <InteractionSection />
+  ) : (
     <>
       <NavigationBar
         rightButtonText="다음"
