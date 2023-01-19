@@ -48,7 +48,7 @@ const GeneratePage: NextPage<GeneratePageProps> = ({ platformName }) => {
     setIsGenerating(true);
     setTimeout(() => {
       router.push(`${RESULT_ROUTES[platformName]}?${selectedOptionParams}`);
-    }, 2000);
+    }, 2300);
   };
 
   const handleBackToPrevPage = () => {
