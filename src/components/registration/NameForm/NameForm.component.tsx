@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect, forwardRef } from 'react';
+import { useEffect, forwardRef, useState, useRef } from 'react';
 import type { ChangeEventHandler, FormEventHandler, MutableRefObject } from 'react';
 import { z } from 'zod';
 
@@ -16,6 +16,18 @@ interface NameFormProps {
 
 const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, ref) => {
   const router = useRouter();
+  const [name, setName] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (router.isReady) {
+      setName(router.query.name as string);
+    }
+  }, [router]);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   useEffect(() => {
     if (!ref) return;
@@ -44,13 +56,15 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, r
   };
 
   const handleChangeInput: ChangeEventHandler<HTMLInputElement> = (event) => {
-    const [currentValueLength, maxValueLength] = [
+    const [currentValueLength, maxValueLength, currentValue] = [
       event.currentTarget.value.length,
       event.currentTarget.maxLength,
+      event.currentTarget.value,
     ];
     if (maxValueLength < currentValueLength) {
-      // eslint-disable-next-line no-param-reassign
-      event.currentTarget.value = event.currentTarget.value.slice(0, maxValueLength);
+      setName(currentValue.slice(0, maxValueLength));
+    } else {
+      setName(currentValue);
     }
   };
 
@@ -73,8 +87,9 @@ const NameForm = forwardRef<HTMLFormElement, NameFormProps>(({ onChangeForm }, r
           required
           minLength={1}
           maxLength={6}
-          defaultValue={router.query.name}
+          value={name}
           onChange={handleChangeInput}
+          ref={inputRef}
         />
       </Styled.Form>
       <Styled.Note>최대 6글자 입력할 수 있어요</Styled.Note>
