@@ -7,12 +7,15 @@ import { Layout } from '@/components/common';
 import { defaultSEO } from '@/constants/seo';
 import useGoogleAnalytics from '@/hooks/useGoogleAnalytics';
 import { Toaster } from 'react-hot-toast';
+import useGoogleTagManager from '@/hooks/useGoogleTagManager';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const GoogleTagManagerScripts = useGoogleTagManager();
   const GoogleAnalyticsScripts = useGoogleAnalytics();
 
   return (
     <>
+      <GoogleTagManagerScripts />
       <GoogleAnalyticsScripts />
       <Global styles={globalStyles} />
       <DefaultSeo {...defaultSEO} />
