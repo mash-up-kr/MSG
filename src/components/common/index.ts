@@ -8,3 +8,4 @@ export { default as Portal } from './Portal/Portal.component';
 export { default as Modal } from './Modal/Modal.component';
 export { default as ConfirmModalDialog } from './ConfirmModalDialog/ConfirmModalDialog.component';
 export { default as Toast } from './Toast/Toast.component';
+export { default as Lottie } from './Lottie/Lottie.component';

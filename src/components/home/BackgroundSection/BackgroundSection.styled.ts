@@ -1,3 +1,4 @@
+import { Lottie } from '@/components/common';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -35,4 +36,19 @@ export const SphereContainer = styled.div`
   width: 60rem;
   height: 60rem;
   transform: translate3d(-50%, 0, 0);
+`;
+
+export const SnowLottie = styled(Lottie)`
+  ${({ theme }) => css`
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: ${theme.zIndex.snowLottie};
+    width: 100%;
+    max-width: 76.8rem;
+    height: 100%;
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0.5;
+    /* transform: translate3d(-50%, 0, 0); */
+  `}
 `;
