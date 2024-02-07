@@ -5,6 +5,10 @@ import MacBookSvg from '@/assets/svg/macbook.svg';
 import BubbleSvg from '@/assets/svg/bubble-tail.svg';
 import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
 import BeerSvg from '@/assets/svg/beer-bottom.svg';
+import LuckybagSvg from '@/assets/svg/luckybag-bottom.svg';
+import TreeSvg from '@/assets/svg/tree-bottom.svg';
+import SakeSvg from '@/assets/svg/sake-bottom.svg';
+import SojuSvg from '@/assets/svg/soju-bottom.svg';
 import { WineBottom as WineSvg } from '@/assets/svgComponent';
 import EnergySvg from '@/assets/svg/energy-bottom.svg';
 import SnowSvg from '@/assets/svg/snow-bg.svg';
@@ -124,6 +128,38 @@ export const Coffee = styled(CoffeeSvg)`
   `}
 `;
 export const Energy = styled(EnergySvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+  `}
+`;
+export const Luckybag = styled(LuckybagSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+  `}
+`;
+export const Tree = styled(TreeSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+  `}
+`;
+export const Sake = styled(SakeSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+  `}
+`;
+export const Soju = styled(SojuSvg)`
   ${({ theme }) => css`
     position: absolute;
     right: 1rem;

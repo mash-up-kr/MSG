@@ -17,6 +17,10 @@ const snacks = {
   beer: Styled.Beer,
   wine: Styled.Wine,
   energy: Styled.Energy,
+  luckybag: Styled.Luckybag,
+  tree: Styled.Tree,
+  sake: Styled.Sake,
+  soju: Styled.Soju,
 };
 
 export type PreviewBackgroundColor =
@@ -29,7 +33,16 @@ export type PreviewBackgroundColor =
   | 'christmas'
   | 'newYear'
   | 'black50';
-export type PreviewSnack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
+export type PreviewSnack =
+  | 'coffee'
+  | 'beer'
+  | 'wine'
+  | 'energy'
+  | 'soju'
+  | 'sake'
+  | 'tree'
+  | 'luckybag'
+  | null;
 interface PreviewSectionProps {
   backgroundColor: PreviewBackgroundColor;
   snack: PreviewSnack;
