@@ -10,7 +10,7 @@ const EventSection = () => {
       </Styled.Heading>
       <Styled.Event>
         <Styled.SubHeading>진행 기간</Styled.SubHeading>
-        <Styled.Paragraph>2023. 01. 27 (금) 까지</Styled.Paragraph>
+        <Styled.Paragraph>2024. 02. 16 (금) 까지</Styled.Paragraph>
       </Styled.Event>
       <Styled.Event>
         <Styled.SubHeading>미션 3개</Styled.SubHeading>
@@ -25,7 +25,7 @@ const EventSection = () => {
       </Styled.Event>
       <Styled.Event>
         <Styled.SubHeading>선물</Styled.SubHeading>
-        <Styled.Paragraph>추첨을 통해 3명에게 아이스아메리카노 증정</Styled.Paragraph>
+        <Styled.Paragraph>추첨을 통해 3명에게 네이버페이 5,000원 증정</Styled.Paragraph>
       </Styled.Event>
     </Styled.EventSection>
   );
