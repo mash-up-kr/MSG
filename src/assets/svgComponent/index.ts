@@ -15,3 +15,6 @@ export { default as WineBottom } from './WineBottom.component';
 export { default as FireWork } from './FireWork.component';
 export { default as Rain } from './Rain.component';
 export { default as Christmas } from './Christmas.component';
+export { default as HiddenMashong } from './HiddenMashong.component';
+export { default as HiddenMashongDeco } from './HiddenMashongDeco.component';
+export { default as Moon } from './Moon.component';
