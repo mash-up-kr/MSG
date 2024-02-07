@@ -12,6 +12,22 @@ import { PreviewBackgroundColor } from '../PreviewSection/PreviewSection.compone
 
 const backgroundOptions = [
   {
+    ImageComponent: NewYearBg,
+    option: 'newYear',
+  },
+  {
+    ImageComponent: ChristmasBg,
+    option: 'christmas',
+  },
+  {
+    ImageComponent: FireWorkBg,
+    option: 'fireWork',
+  },
+  {
+    ImageComponent: RainBg,
+    option: 'rain',
+  },
+  {
     ImageComponent: NightBg,
     option: 'night',
   },
@@ -26,22 +42,6 @@ const backgroundOptions = [
   {
     ImageComponent: SnowBg,
     option: 'snow',
-  },
-  {
-    ImageComponent: RainBg,
-    option: 'rain',
-  },
-  {
-    ImageComponent: FireWorkBg,
-    option: 'fireWork',
-  },
-  {
-    ImageComponent: ChristmasBg,
-    option: 'christmas',
-  },
-  {
-    ImageComponent: NewYearBg,
-    option: 'newYear',
   },
 ] as const;
 
