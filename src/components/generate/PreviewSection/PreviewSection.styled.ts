@@ -11,6 +11,10 @@ import SnowSvg from '@/assets/svg/snow-bg.svg';
 import SunsetSvg from '@/assets/svgComponent/Sunset.component';
 import MorningSvg from '@/assets/svg/morning-bg.svg';
 import NightSvg from '@/assets/svg/night-bg.svg';
+import RainSvg from '@/assets/svgComponent/Rain.component';
+import FireWorkSvg from '@/assets/svgComponent/FireWork.component';
+import ChristmasSvg from '@/assets/svgComponent/Christmas.component';
+import NewYearSvg from '@/assets/svgComponent/NewYear.component';
 import { PreviewBackgroundColor } from './PreviewSection.component';
 
 export const PreviewSection = styled.section`
@@ -70,6 +74,26 @@ export const Morning = styled(MorningSvg)`
   right: 3.2rem;
 `;
 export const Snow = styled(SnowSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const Rain = styled(RainSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const FireWork = styled(FireWorkSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const Christmas = styled(ChristmasSvg)`
+  position: absolute;
+  top: 5.4rem;
+  right: 3.2rem;
+`;
+export const NewYear = styled(NewYearSvg)`
   position: absolute;
   top: 5.4rem;
   right: 3.2rem;

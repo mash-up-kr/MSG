@@ -6,6 +6,10 @@ const backgroundWindows = {
   night: Styled.Night,
   sunset: Styled.Sunset,
   morning: Styled.Morning,
+  rain: Styled.Rain,
+  fireWork: Styled.FireWork,
+  christmas: Styled.Christmas,
+  newYear: Styled.NewYear,
   black50: null,
 };
 const snacks = {
@@ -15,7 +19,16 @@ const snacks = {
   energy: Styled.Energy,
 };
 
-export type PreviewBackgroundColor = 'night' | 'sunset' | 'morning' | 'snow' | 'black50';
+export type PreviewBackgroundColor =
+  | 'night'
+  | 'sunset'
+  | 'morning'
+  | 'snow'
+  | 'rain'
+  | 'fireWork'
+  | 'christmas'
+  | 'newYear'
+  | 'black50';
 export type PreviewSnack = 'coffee' | 'beer' | 'wine' | 'energy' | null;
 interface PreviewSectionProps {
   backgroundColor: PreviewBackgroundColor;

@@ -12,3 +12,6 @@ export { default as Design } from './Design.component';
 export { default as Spring } from './Spring.component';
 export { default as Node } from './Node.component';
 export { default as WineBottom } from './WineBottom.component';
+export { default as FireWork } from './FireWork.component';
+export { default as Rain } from './Rain.component';
+export { default as Christmas } from './Christmas.component';

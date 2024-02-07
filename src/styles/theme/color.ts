@@ -26,6 +26,10 @@ export const color = {
   morning: 'linear-gradient(180deg, #ACFF85 0%, #2F98E4 100%)',
   snow: 'linear-gradient(180deg, #3EA2FF 0%, #FF7A30 100%)',
   sunsetWindow: 'linear-gradient(180deg, #FF617E 0%, #FFC28A 100%)',
+  rain: 'linear-gradient(180deg, #1E2122 0%, #4A4C76 100%)',
+  fireWork: 'linear-gradient(180deg, #573CAE 0%, #DBC7AB 100%)',
+  christmas: 'linear-gradient(180deg, #061150 0%, #006787 100%)',
+  newYear: 'linear-gradient(180deg, #F5F3F4 0%, #DED393 100%)',
 } as const;
 
 export type ColorType = typeof color;
