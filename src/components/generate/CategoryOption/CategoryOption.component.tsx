@@ -7,7 +7,7 @@ import TalkMySelfControl from '../TalkMySelfControl/TalkMySelfControl.component'
 
 export const CONTROL_CATEGORIES = {
   background: '배경',
-  snack: '간식',
+  snack: '소품',
   talkMySelf: '혼잣말',
 } as const;
 

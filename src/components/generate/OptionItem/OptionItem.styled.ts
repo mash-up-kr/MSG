@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 export const OptionItem = styled.li<{ isSelected: boolean }>`
   ${({ theme, isSelected }) => css`
+    min-width: 7.6rem;
     overflow: hidden;
     background: ${isSelected ? theme.color.mashup : theme.color.gray900};
     background-origin: border-box;

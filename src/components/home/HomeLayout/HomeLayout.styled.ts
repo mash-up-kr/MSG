@@ -11,6 +11,6 @@ export const HomeLayout = styled.main`
     width: 100%;
     height: 100%;
     min-height: 66.2rem;
-    background: ${theme.color.gray900};
+    background: ${theme.color.black};
   `}
 `;

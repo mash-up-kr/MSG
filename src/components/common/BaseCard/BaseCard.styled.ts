@@ -1,20 +1,22 @@
 import TwinkleSvg from '@/assets/svg/twinkle.svg';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import HiddenMashongSvg from '@/assets/svg/hidden-mashong.svg';
+import HiddenMashongSvg from '@/assets/svgComponent/HiddenMashong.component';
+import HiddenMashongDecoSvg from '@/assets/svgComponent/HiddenMashongDeco.component';
+import MoonSvg from '@/assets/svgComponent/Moon.component';
+import WhosNextSvg from '@/assets/svgComponent/WhosNext.component';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    width: 24rem;
-    height: 36rem;
-    padding: 1.6rem;
-    background: linear-gradient(${theme.color.black}, ${theme.color.black}) padding-box,
-      ${theme.color.mashup} border-box;
-    border: 0.2rem solid transparent;
-    border-radius: 2rem;
-  `}
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+  height: 36rem;
+  padding: 1.6rem;
+  background: linear-gradient(0deg, #22093b 0%, #07000e 20.26%, #0f0f0f 99.03%) padding-box,
+    linear-gradient(102deg, #303030 9.47%, #303030 39.77%, #ababab 60.79%, #303030 82.59%)
+      border-box;
+  border: 0.2rem solid transparent;
+  border-radius: 2rem;
 `;
 
 export const Twinkles = styled.div`
@@ -48,7 +50,7 @@ export const Background = styled.div`
       display: block;
       width: 17rem;
       height: 18rem;
-      background: ${theme.color.mashup};
+      background: linear-gradient(180deg, #000 70%, #552b53 100%);
       border-radius: 10.85rem 10.85rem 0 0;
       opacity: 0.5;
       content: '';
@@ -64,11 +66,23 @@ export const HiddenMashong = styled(HiddenMashongSvg)`
   transform: translateX(-50%);
 `;
 
-export const Introduction = styled.p`
+export const HiddenMashongDeco = styled(HiddenMashongDecoSvg)`
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+`;
+
+export const Moon = styled(MoonSvg)`
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+`;
+
+export const WhosNext = styled(WhosNextSvg)`
   flex-grow: 1;
-  margin-top: 2.4rem;
-  font-weight: 800;
-  font-size: 3rem;
-  line-height: 3.7rem;
-  text-align: center;
+  margin: 0 auto;
 `;

@@ -4,7 +4,9 @@ import * as Styled from './Footer.styled';
 const Footer = () => {
   return (
     <Styled.Footer>
-      <MashupLogo aria-label="Mash Up" />
+      <a href="https://mash-up.kr/" target="_blank" rel="noopener noreferrer">
+        <MashupLogo aria-label="Mash Up" />
+      </a>
       <Styled.IconContainer>
         <a href="https://www.instagram.com/official_mashup_/" target="_blank" rel="noreferrer">
           <Styled.InstagramDark />

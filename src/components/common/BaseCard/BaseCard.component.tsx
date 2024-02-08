@@ -12,9 +12,11 @@ const BaseCard = ({ className }: BaseCardProps) => {
         <Styled.Twinkle />
       </Styled.Twinkles>
       <Styled.Background>
+        <Styled.HiddenMashongDeco />
         <Styled.HiddenMashong />
+        <Styled.Moon />
       </Styled.Background>
-      <Styled.Introduction>Who’s next?</Styled.Introduction>
+      <Styled.WhosNext />
       <Styled.Twinkles>
         <Styled.Twinkle inverted="true" />
         <Styled.Twinkle />

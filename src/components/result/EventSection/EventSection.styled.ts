@@ -7,8 +7,11 @@ export const EventSection = styled.section`
     ${theme.animation.fadeUp({ duration: 0.8, delay: 0.3, move: 4 })};
     width: 31.5rem;
     padding: 2.4rem 2rem;
-    background: linear-gradient(98.54deg, rgba(255, 28, 96, 0.2) 0%, rgba(82, 67, 255, 0.2) 100%);
-    border-radius: 1.2rem;
+    background: linear-gradient(#0f0f0f, #0f0f0f) padding-box,
+      linear-gradient(102deg, #303030 9.47%, #303030 39.77%, #ababab 60.79%, #303030 82.59%)
+        border-box;
+    border: 0.2rem solid transparent;
+    border-radius: 1.6rem;
     opacity: 0;
   `}
 `;
@@ -60,17 +63,33 @@ export const SubHeading = styled.h4`
 `;
 
 export const Paragraph = styled.p`
-  ${({ theme }) => css`
-    margin-top: 0.3rem;
-    color: ${theme.color.white};
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.2;
-    white-space: pre-wrap;
-    opacity: 0.5;
+  margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  white-space: pre-wrap;
 
-    &:first-of-type {
-      margin-top: 0.4rem;
-    }
+  &:first-of-type {
+    margin-top: 0.4rem;
+  }
+`;
+
+export const Highlight = styled.em`
+  ${({ theme }) => css`
+    color: ${theme.color.purple60};
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-style: normal;
+    line-height: 1.2;
+  `}
+`;
+
+export const ExternalLink = styled.a`
+  ${({ theme }) => css`
+    color: ${theme.color.purple60};
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
   `}
 `;

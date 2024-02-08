@@ -7,10 +7,18 @@ import CoffeeSvg from '@/assets/svg/coffee-bottom.svg';
 import BeerSvg from '@/assets/svg/beer-bottom.svg';
 import { WineBottom as WineSvg } from '@/assets/svgComponent';
 import EnergySvg from '@/assets/svg/energy-bottom.svg';
+import LuckybagSvg from '@/assets/svg/luckybag-bottom.svg';
+import TreeSvg from '@/assets/svg/tree-bottom.svg';
+import SakeSvg from '@/assets/svg/sake-bottom.svg';
+import SojuSvg from '@/assets/svg/soju-bottom.svg';
 import SnowSvg from '@/assets/svg/snow-bg.svg';
 import SunsetSvg from '@/assets/svgComponent/Sunset.component';
 import MorningSvg from '@/assets/svg/morning-bg.svg';
 import NightSvg from '@/assets/svg/night-bg.svg';
+import RainSvg from '@/assets/svgComponent/Rain.component';
+import FireWorkSvg from '@/assets/svgComponent/FireWork.component';
+import ChristmasSvg from '@/assets/svgComponent/Christmas.component';
+import NewYearSvg from '@/assets/svgComponent/NewYear.component';
 import { Platform } from '@/constants/platform';
 import { Background } from './ResultCard.component';
 
@@ -18,27 +26,38 @@ export const ResultCardContainer = styled.div`
   position: relative;
 `;
 
-export const ResultCard = styled.div<{ platform: Platform }>`
-  ${({ theme, platform }) => css`
+const PLATFORM_BACKGROUND: Record<Platform, string> = {
+  android: 'linear-gradient(0deg, #0F2D19 0%, #00030E 20.26%, #0F1916 99.03%)',
+  ios: 'linear-gradient(0deg, #1A1E26 0%, #08000E 20.26%, #181B20 99.03%)',
+  design: 'linear-gradient(0deg, #241C2D 0%, #08000E 20.26%, #1E1320 99.03%)',
+  spring: 'linear-gradient(0deg, #0E2324 0%, #000E0C 20.26%, #11201B 99.03%)',
+  web: 'linear-gradient(0deg, #10202F 0%, #00030E 20.26%, #151B27 99.03%)',
+  node: 'linear-gradient(0deg, #2A1419 0%, #0E0300 20.26%, #281D1C 99.03%)',
+};
+
+export const ResultCard = styled.div`
+  ${({ theme }) => css`
     position: relative;
     width: 24rem;
     height: 36rem;
     overflow: hidden;
-    background: ${theme.color[platform]};
+    background: linear-gradient(${theme.color.black}, ${theme.color.black}) padding-box,
+      linear-gradient(102deg, #303030 9.47%, #303030 39.77%, #ababab 60.79%, #303030 82.59%)
+        border-box;
     background-origin: border-box;
     border: 0.3rem solid transparent;
     border-radius: 2rem;
   `}
 `;
 
-export const ResultCardBackground = styled.div`
-  ${({ theme }) => css`
+export const ResultCardBackground = styled.div<{ platform: Platform }>`
+  ${({ platform }) => css`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: ${theme.color.black};
+    background: ${PLATFORM_BACKGROUND[platform]};
     border-radius: 1.7rem;
   `}
 `;
@@ -160,6 +179,34 @@ export const Night = styled(NightSvg)`
   width: 3.6rem;
   height: 3.6rem;
 `;
+export const Rain = styled(RainSvg)`
+  position: absolute;
+  top: 4.05rem;
+  right: 2.4rem;
+  width: 3.6rem;
+  height: 3.6rem;
+`;
+export const FireWork = styled(FireWorkSvg)`
+  position: absolute;
+  top: 4.05rem;
+  right: 2.4rem;
+  width: 3.6rem;
+  height: 3.6rem;
+`;
+export const Christmas = styled(ChristmasSvg)`
+  position: absolute;
+  top: 4.05rem;
+  right: 2.4rem;
+  width: 3.6rem;
+  height: 3.6rem;
+`;
+export const NewYear = styled(NewYearSvg)`
+  position: absolute;
+  top: 4.05rem;
+  right: 2.4rem;
+  width: 3.6rem;
+  height: 3.6rem;
+`;
 
 export const Wine = styled(WineSvg)`
   ${({ theme }) => css`
@@ -192,6 +239,46 @@ export const Coffee = styled(CoffeeSvg)`
   `}
 `;
 export const Energy = styled(EnergySvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
+`;
+export const Luckybag = styled(LuckybagSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
+`;
+export const Tree = styled(TreeSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
+`;
+export const Sake = styled(SakeSvg)`
+  ${({ theme }) => css`
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0;
+    z-index: ${theme.zIndex.snack};
+    width: 3.6rem;
+    height: 3.6rem;
+  `}
+`;
+export const Soju = styled(SojuSvg)`
   ${({ theme }) => css`
     position: absolute;
     right: 0.75rem;

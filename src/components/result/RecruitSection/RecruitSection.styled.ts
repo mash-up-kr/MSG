@@ -11,13 +11,17 @@ export const RecruitAnchor = styled.a`
 `;
 
 export const RecruitSection = styled.section`
-  ${({ theme }) => css`
-    position: relative;
-    width: 31.5rem;
-    padding: 2rem 2.5rem;
-    background: ${theme.color.mashup};
-    border-radius: 1.6rem;
-  `}
+  position: relative;
+  width: 31.5rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(
+    282deg,
+    #7444fc -13.2%,
+    #ffbadb 29.11%,
+    #7444fc 67.99%,
+    #100431 101.16%
+  );
+  border-radius: 1.6rem;
 `;
 
 export const RecruitSchedule = styled.time`
@@ -42,7 +46,7 @@ export const Paragraph = styled.p`
 
 export const Mashong = styled(Image)`
   position: absolute;
-  right: -1.6rem;
+  right: 1.1rem;
   bottom: 0;
   width: 12rem;
   height: 10.2rem;
