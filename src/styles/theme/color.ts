@@ -8,6 +8,7 @@ export const color = {
   gray300: '#808B97',
   gray80: '#343A40',
   gray30: '#DEE2E6',
+  purple60: '#836BFF',
   purple40: '#C2B6FF',
   purple10: '#F1EFFF',
   red40: '#FFC4CF',
