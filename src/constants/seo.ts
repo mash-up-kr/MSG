@@ -5,7 +5,7 @@ import { DefaultSeoProps } from 'next-seo';
 export const defaultSEO: DefaultSeoProps = {
   titleTemplate: 'Mash-Up | ',
   defaultTitle: 'Mash-Up | 매숑이 직군 카드 만들기',
-  description: '매숑이와 함께하는 연봉 쭉 쭉 오르는 내 직군 카드 만들기',
+  description: '매숑이와 함께하는 CEO도 탐내는 내 직군 카드 만들기',
   additionalLinkTags: [
     {
       rel: 'icon',
