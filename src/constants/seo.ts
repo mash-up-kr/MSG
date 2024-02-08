@@ -34,7 +34,7 @@ export const defaultSEO: DefaultSeoProps = {
         url: ogImg.src,
         width: 800,
         height: 400,
-        alt: '매숑이와 함께하는 CEO가 탐내는 내 직군 카드 만들기',
+        alt: '매숑이와 함께하는 CEO도 탐내는 내 직군 카드 만들기',
         type: 'image/png',
       },
     ],
