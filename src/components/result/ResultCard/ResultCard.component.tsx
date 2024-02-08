@@ -41,6 +41,10 @@ const backgroundWindows = {
   night: Styled.Night,
   sunset: Styled.Sunset,
   morning: Styled.Morning,
+  rain: Styled.Rain,
+  fireWork: Styled.FireWork,
+  christmas: Styled.Christmas,
+  newYear: Styled.NewYear,
   black50: null,
 };
 const snacks = {
@@ -48,6 +52,10 @@ const snacks = {
   beer: Styled.Beer,
   wine: Styled.Wine,
   energy: Styled.Energy,
+  luckybag: Styled.Luckybag,
+  tree: Styled.Tree,
+  sake: Styled.Sake,
+  soju: Styled.Soju,
 };
 
 export type Background = 'night' | 'sunset' | 'morning' | 'snow' | 'black50';
