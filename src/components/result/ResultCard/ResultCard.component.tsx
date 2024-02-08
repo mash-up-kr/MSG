@@ -87,8 +87,8 @@ const ResultCard = forwardRef<HTMLDivElement, ResultCardProps>(
 
     return (
       <Styled.ResultCardContainer ref={ref}>
-        <Styled.ResultCard platform={platformName} className={className}>
-          <Styled.ResultCardBackground>
+        <Styled.ResultCard className={className}>
+          <Styled.ResultCardBackground platform={platformName}>
             <Styled.PlatformIconWrapper>
               <PlatformIcon />
             </Styled.PlatformIconWrapper>

@@ -26,27 +26,38 @@ export const ResultCardContainer = styled.div`
   position: relative;
 `;
 
-export const ResultCard = styled.div<{ platform: Platform }>`
-  ${({ theme, platform }) => css`
+const PLATFORM_BACKGROUND: Record<Platform, string> = {
+  android: 'linear-gradient(0deg, #0F2D19 0%, #00030E 20.26%, #0F1916 99.03%)',
+  ios: 'linear-gradient(0deg, #1A1E26 0%, #08000E 20.26%, #181B20 99.03%)',
+  design: 'linear-gradient(0deg, #241C2D 0%, #08000E 20.26%, #1E1320 99.03%)',
+  spring: 'linear-gradient(0deg, #0E2324 0%, #000E0C 20.26%, #11201B 99.03%)',
+  web: 'linear-gradient(0deg, #10202F 0%, #00030E 20.26%, #151B27 99.03%)',
+  node: 'linear-gradient(0deg, #2A1419 0%, #0E0300 20.26%, #281D1C 99.03%)',
+};
+
+export const ResultCard = styled.div`
+  ${({ theme }) => css`
     position: relative;
     width: 24rem;
     height: 36rem;
     overflow: hidden;
-    background: ${theme.color[platform]};
+    background: linear-gradient(${theme.color.black}, ${theme.color.black}) padding-box,
+      linear-gradient(102deg, #303030 9.47%, #303030 39.77%, #ababab 60.79%, #303030 82.59%)
+        border-box;
     background-origin: border-box;
     border: 0.3rem solid transparent;
     border-radius: 2rem;
   `}
 `;
 
-export const ResultCardBackground = styled.div`
-  ${({ theme }) => css`
+export const ResultCardBackground = styled.div<{ platform: Platform }>`
+  ${({ platform }) => css`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
     height: 100%;
-    background: ${theme.color.black};
+    background: ${PLATFORM_BACKGROUND[platform]};
     border-radius: 1.7rem;
   `}
 `;
