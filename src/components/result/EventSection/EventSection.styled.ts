@@ -75,6 +75,16 @@ export const Paragraph = styled.p`
   }
 `;
 
+export const Highlight = styled.em`
+  ${({ theme }) => css`
+    color: ${theme.color.purple60};
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-style: normal;
+    line-height: 1.2;
+  `}
+`;
+
 export const ExternalLink = styled.a`
   ${({ theme }) => css`
     color: ${theme.color.purple60};

@@ -14,11 +14,12 @@ export const RecruitSection = styled.section`
   position: relative;
   width: 31.5rem;
   padding: 2rem 2.5rem;
-  background: radial-gradient(
-    219.26% 243.25% at 83.33% 83.33%,
-    #ffbadb 0%,
-    #7444fc 38.5%,
-    #100431 100%
+  background: linear-gradient(
+    282deg,
+    #7444fc -13.2%,
+    #ffbadb 29.11%,
+    #7444fc 67.99%,
+    #100431 101.16%
   );
   border-radius: 1.6rem;
 `;

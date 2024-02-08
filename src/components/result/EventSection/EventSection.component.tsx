@@ -50,7 +50,9 @@ const EventSection = () => {
       </Styled.Event>
       <Styled.Event>
         <Styled.SubHeading>선물</Styled.SubHeading>
-        <Styled.Paragraph>추첨을 통해 3명에게 네이버페이 5,000원 증정</Styled.Paragraph>
+        <Styled.Paragraph>
+          추첨을 통해 3명에게 <Styled.Highlight>네이버페이 5,000원</Styled.Highlight> 증정
+        </Styled.Paragraph>
       </Styled.Event>
     </Styled.EventSection>
   );
