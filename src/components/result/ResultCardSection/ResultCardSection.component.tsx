@@ -53,7 +53,7 @@ const ResultCardSection = ({ platformName }: ResultCardSectionProps) => {
   return (
     <>
       <Styled.ResultCardSection>
-        <Styled.EffectText>CEO가 탐내는{'\n'}내 직군 카드 완성!</Styled.EffectText>
+        <Styled.EffectText>CEO도 탐내는{'\n'}내 직군 카드 완성!</Styled.EffectText>
         <Styled.FadeUpResultCard platformName={platformName} ref={resultCardRef} />
         <Styled.SaveAndShareContainer>
           <Button size="l" isSelected={false} onClick={handleSaveImage}>
