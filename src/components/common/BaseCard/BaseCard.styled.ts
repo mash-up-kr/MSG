@@ -7,17 +7,16 @@ import MoonSvg from '@/assets/svgComponent/Moon.component';
 import WhosNextSvg from '@/assets/svgComponent/WhosNext.component';
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    flex-direction: column;
-    width: 24rem;
-    height: 36rem;
-    padding: 1.6rem;
-    background: linear-gradient(${theme.color.black}, ${theme.color.black}) padding-box,
-      ${theme.color.mashup} border-box;
-    border: 0.2rem solid transparent;
-    border-radius: 2rem;
-  `}
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+  height: 36rem;
+  padding: 1.6rem;
+  background: linear-gradient(0deg, #22093b 0%, #07000e 20.26%, #0f0f0f 99.03%) padding-box,
+    linear-gradient(102deg, #303030 9.47%, #303030 39.77%, #ababab 60.79%, #303030 82.59%)
+      border-box;
+  border: 0.2rem solid transparent;
+  border-radius: 2rem;
 `;
 
 export const Twinkles = styled.div`

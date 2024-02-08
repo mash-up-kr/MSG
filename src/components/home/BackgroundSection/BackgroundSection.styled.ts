@@ -11,7 +11,7 @@ export const BackgroundTop = styled.div`
     width: 100%;
     max-width: 76.8rem;
     height: 50%;
-    background: ${theme.color.gray900};
+    background: ${theme.color.black};
     transform: translate3d(-50%, 0, 0);
   `}
 `;
