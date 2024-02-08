@@ -1,5 +1,5 @@
 import favicon from 'public/favicon.ico';
-import ogImg from '@/assets/image/msg-og-image.png';
+import ogImg from '@/assets/image/msg-og-image@2x-min.png';
 import { DefaultSeoProps } from 'next-seo';
 
 export const defaultSEO: DefaultSeoProps = {
@@ -34,7 +34,7 @@ export const defaultSEO: DefaultSeoProps = {
         url: ogImg.src,
         width: 800,
         height: 400,
-        alt: '매숑이와 함께하는 연봉 쭉 쭉 오르는 내 직군 카드 만들기',
+        alt: '매숑이와 함께하는 CEO가 탐내는 내 직군 카드 만들기',
         type: 'image/png',
       },
     ],
