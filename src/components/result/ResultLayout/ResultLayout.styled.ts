@@ -13,15 +13,3 @@ export const ResultLayout = styled.div`
     overflow-y: scroll;
   `}
 `;
-
-export const BackgroundTop = styled.div`
-  ${({ theme }) => css`
-    position: fixed;
-    top: 0;
-    z-index: ${theme.zIndex.background};
-    width: 100%;
-    max-width: 76.8rem;
-    height: 50%;
-    background: ${theme.color.gray900};
-  `}
-`;
