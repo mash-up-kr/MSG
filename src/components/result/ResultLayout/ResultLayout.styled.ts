@@ -11,5 +11,10 @@ export const ResultLayout = styled.div`
     align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   `}
 `;
