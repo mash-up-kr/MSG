@@ -11,17 +11,10 @@ export const ResultLayout = styled.div`
     align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
-  `}
-`;
-
-export const BackgroundTop = styled.div`
-  ${({ theme }) => css`
-    position: fixed;
-    top: 0;
-    z-index: ${theme.zIndex.background};
-    width: 100%;
-    max-width: 76.8rem;
-    height: 50%;
-    background: ${theme.color.gray900};
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   `}
 `;
